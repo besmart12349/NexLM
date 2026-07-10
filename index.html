@@ -68,35 +68,37 @@ nav button[aria-current="page"]{opacity:.5;pointer-events:none}
 .local-steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
 .local-steps b{font:10px ui-monospace,monospace;color:#246de6}
 
-/* Terminal */
-.terminal-card{align-self:center;justify-self:end;border:1px solid var(--glassline);border-radius:18px;overflow:hidden;background:rgba(24,24,22,.89);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 24px 60px rgba(30,29,24,.18);backdrop-filter:blur(24px);transform:rotate(1.3deg);transition:transform .35s;max-width:620px;width:100%}
+/* Terminal — Ollama-style minimalist */
+.terminal-card{align-self:center;justify-self:end;border-radius:16px;overflow:hidden;background:#1a1a18;box-shadow:0 28px 60px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.07);transform:rotate(1.3deg);transition:transform .35s;max-width:480px;width:100%}
 .terminal-card:hover{transform:rotate(0) translateY(-7px)}
-.terminal-card.running{box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 24px 60px rgba(30,29,24,.18),0 0 0 3px rgba(75,141,255,.30)}
-.terminal-bar{height:42px;background:rgba(255,255,255,.09);display:flex;align-items:center;gap:7px;padding:0 14px;color:#aaa;font:10px ui-monospace,monospace;letter-spacing:1px}
-.terminal-bar span{width:8px;height:8px;border-radius:50%;background:#9b9a94}
-.terminal-bar span:first-child{background:#4b8dff}
-.terminal-bar b{font-weight:400;margin-left:8px}
-.terminal-bar small{margin-left:auto;color:#bdbbb4;font-size:9px}
-.terminal-tabs{display:flex;gap:5px;padding:10px 12px;background:rgba(255,255,255,.05);overflow-x:auto;scrollbar-width:none}
-.terminal-tabs::-webkit-scrollbar{display:none}
-.runtime{flex:0 0 auto;border:1px solid rgba(255,255,255,.17);border-radius:99px;background:transparent;color:#c9c8c1;font:9px ui-monospace,monospace;letter-spacing:.3px;padding:6px 8px;cursor:pointer;transition:.2s;min-height:30px}
-.runtime:hover,.runtime.active{background:var(--lime);color:#111;border-color:var(--lime)}
-.runtime:focus-visible{outline:2px solid white;outline-offset:2px}
-.terminal-body{padding:28px 24px 30px;color:#f1f0eb;font:12px/1.85 ui-monospace,SFMono-Regular,monospace;min-height:218px}
-.terminal-body em{color:var(--lime);font-style:normal}
-.quiet{color:#aaa9a1}
-.answer{color:var(--lime);padding-left:18px}
-.ready{margin-top:5px}
-.ready span:first-child{color:var(--lime)}
-.blink{animation:blink 1s steps(1) infinite;color:var(--lime)}
-@keyframes blink{50%{opacity:0}}
-.commandline{white-space:nowrap;overflow:auto}
-.terminal-actions{display:flex;gap:8px;padding:0 20px 20px}
-.terminal-actions button{font:10px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.6px;cursor:pointer;padding:10px 12px;border-radius:7px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#f1f0eb}
-.terminal-actions #run-terminal{background:var(--lime);border-color:var(--lime);color:#121212}
-.terminal-actions button:hover{filter:brightness(1.08)}
-.terminal-actions button:focus-visible{outline:2px solid white;outline-offset:2px}
-.terminal-actions b{font-size:15px;line-height:5px}
+.terminal-bar{height:44px;background:#252522;display:flex;align-items:center;gap:7px;padding:0 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.terminal-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+.terminal-dot.red{background:#ff5f57}
+.terminal-dot.yellow{background:#febc2e}
+.terminal-dot.green{background:#28c840}
+.terminal-bar-title{font:12px ui-monospace,monospace;color:#666;margin-left:10px;flex:1;text-align:center;letter-spacing:.3px}
+.terminal-body{padding:20px 20px 8px;color:#e8e6df;font:13px/1.7 ui-monospace,SFMono-Regular,monospace;min-height:190px}
+.term-prompt{color:#555;user-select:none}
+.term-cmd{color:#e8e6df}
+.term-list{margin:4px 0 0;padding:0;list-style:none}
+.term-list li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);color:#bdbbb4;cursor:pointer;transition:color .15s,padding-left .15s;display:flex;align-items:center;gap:8px;font:12px ui-monospace,monospace}
+.term-list li:last-child{border-bottom:0}
+.term-list li:hover{color:#e8e6df;padding-left:6px}
+.term-list li .term-arrow{color:#555;font-size:10px;transition:color .15s}
+.term-list li:hover .term-arrow{color:#4b8dff}
+.term-list li .term-label{flex:1}
+.term-list li.not-installed .term-label{color:#444}
+.term-list li.not-installed .term-tag-ni{font-size:9px;color:#444;letter-spacing:.4px;text-transform:uppercase;margin-left:auto}
+.fetch-tabs-wrap{padding:18px 20px 20px;border-top:1px solid rgba(255,255,255,.06)}
+.fetch-tabs-label{font:9px ui-monospace,monospace;color:#555;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.fetch-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.fetch-tab{flex:0 0 auto;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:transparent;color:#888;font:9px ui-monospace,monospace;letter-spacing:.4px;padding:5px 10px;cursor:pointer;transition:.18s;text-transform:uppercase}
+.fetch-tab:hover,.fetch-tab.active{background:rgba(75,141,255,.18);border-color:#4b8dff;color:#c0d6ff}
+.fetch-cmd-display{background:#111110;border-radius:8px;padding:11px 13px;font:11px ui-monospace,monospace;color:#7db3ff;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid rgba(75,141,255,.18)}
+.fetch-cmd-text{word-break:break-all;line-height:1.5}
+.fetch-copy-btn{flex-shrink:0;background:transparent;border:1px solid rgba(255,255,255,.15);color:#888;font:9px ui-monospace,monospace;padding:5px 8px;border-radius:5px;cursor:pointer;letter-spacing:.4px;text-transform:uppercase;transition:.15s;white-space:nowrap}
+.fetch-copy-btn:hover{color:#e8e6df;border-color:rgba(255,255,255,.35)}
+.terminal-card.running .terminal-dot.green{box-shadow:0 0 0 4px rgba(40,200,64,.22)}
 
 /* Intro shared */
 .intro{padding:8vw 4vw 5vw;border-bottom:1px solid var(--line)}
@@ -220,7 +222,7 @@ nav button[aria-current="page"]{opacity:.5;pointer-events:none}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:none}
 
-/* content-visibility — NOT applied to .page to avoid scroll jump */
+/* content-visibility */
 .home-depth,.release-strip,.use-cases{content-visibility:auto;contain-intrinsic-size:700px}
 
 /* Footer */
@@ -309,9 +311,10 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
   .article h1{font-size:53px}
   .news-lede{margin-top:28px}
   .skip-link:focus{top:78px}
-  .terminal-tabs{max-width:100%}
-  .terminal-actions{flex-wrap:wrap}
-  .terminal-actions button{flex:1 1 auto}
+  .fetch-tabs{flex-wrap:wrap}
+  .fetch-tab{flex:1 1 auto}
+  .fetch-cmd-display{flex-direction:column;align-items:stretch}
+  .fetch-copy-btn{width:100%;text-align:center}
 }
 @media(max-width:380px){
   header{width:calc(100vw - 18px)}
@@ -361,34 +364,40 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
       <p>NexLM models are built for on-device inference: private, responsive, and available without a round trip to the cloud.</p>
       <ol class="local-steps">
         <li><b>01</b><span>Choose a runtime below.</span></li>
-        <li><b>02</b><span>Copy the command for your stack.</span></li>
+        <li><b>02</b><span>Copy the fetch command for your stack.</span></li>
         <li><b>03</b><span>Run privately, on your hardware.</span></li>
       </ol>
     </div>
     <div class="terminal-card" aria-label="Interactive local inference terminal">
       <div class="terminal-bar">
-        <span></span><span></span><span></span>
-        <b>local / nexlm</b>
-        <small id="term-status" aria-live="polite">ready</small>
-      </div>
-      <div class="terminal-tabs" role="tablist" aria-label="Runtime options">
-        <button class="runtime active" role="tab" aria-selected="true" data-runtime="Ollama" data-command="ollama run nexlm/grm-3-nano">Ollama</button>
-        <button class="runtime" role="tab" aria-selected="false" data-runtime="MLX" data-command="python -m mlx_lm.generate --model nexlm/grm-3-nano">MLX</button>
-        <button class="runtime" role="tab" aria-selected="false" data-runtime="GGUF" data-command="llama-cli -m grm-3-nano.gguf">GGUF</button>
-        <button class="runtime" role="tab" aria-selected="false" data-runtime="llama.cpp" data-command="llama-server -m grm-3-nano.gguf">llama.cpp</button>
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-bar-title">nexlm — local / grm-3-nano</span>
       </div>
       <div class="terminal-body" aria-live="polite">
-        <div class="commandline"><em>›</em> <span id="term-command">ollama run nexlm/grm-3-nano</span></div>
-        <div class="quiet" id="term-engine">runtime: Ollama · local inference</div>
-        <div class="quiet">compute: on-device · network: not required</div>
-        <br>
-        <div><em>›</em> <span id="term-question">launch local model</span></div>
-        <div class="answer" id="term-answer">GRM-3 Nano is ready to run.</div>
-        <div class="ready"><span>●</span> <span id="term-ready">on-device. ready.</span><b class="blink">_</b></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">nexlm</span></div>
+        <ul class="term-list" id="term-list">
+          <li data-action="run-model"><span class="term-arrow">▶</span><span class="term-label">Run a model</span></li>
+          <li data-action="ollama"><span class="term-arrow">▶</span><span class="term-label">Launch with Ollama</span></li>
+          <li data-action="mlx"><span class="term-arrow">▶</span><span class="term-label">Launch with MLX</span></li>
+          <li data-action="gguf" class="not-installed"><span class="term-arrow">▶</span><span class="term-label">Launch with llama.cpp</span><span class="term-tag-ni">not installed</span></li>
+          <li data-action="more"><span class="term-arrow">▶</span><span class="term-label">More…</span></li>
+        </ul>
       </div>
-      <div class="terminal-actions">
-        <button id="run-terminal">Run locally <b>↗</b></button>
-        <button id="copy-command" aria-label="Copy command">Copy</button>
+      <div class="fetch-tabs-wrap">
+        <div class="fetch-tabs-label">Fetch command</div>
+        <div class="fetch-tabs" role="tablist" aria-label="Fetch runtime options">
+          <button class="fetch-tab active" role="tab" aria-selected="true" data-runtime="Ollama" data-command="ollama pull nexlm/grm-3-nano">Ollama</button>
+          <button class="fetch-tab" role="tab" aria-selected="false" data-runtime="MLX" data-command="python -m mlx_lm.generate --model nexlm/grm-3-nano">MLX</button>
+          <button class="fetch-tab" role="tab" aria-selected="false" data-runtime="GGUF" data-command="huggingface-cli download nexlm/grm-3-nano-gguf">GGUF</button>
+          <button class="fetch-tab" role="tab" aria-selected="false" data-runtime="llama.cpp" data-command="llama-cli -m grm-3-nano.gguf">llama.cpp</button>
+          <button class="fetch-tab" role="tab" aria-selected="false" data-runtime="pip" data-command="pip install nexlm && nexlm run grm-3-nano">pip</button>
+        </div>
+        <div class="fetch-cmd-display">
+          <span class="fetch-cmd-text" id="fetch-cmd-text">ollama pull nexlm/grm-3-nano</span>
+          <button class="fetch-copy-btn" id="fetch-copy-btn" aria-label="Copy fetch command">Copy</button>
+        </div>
       </div>
     </div>
   </section>
@@ -674,44 +683,43 @@ function openArticle(i){
   go('article');
 }
 
-// Terminal tabs
-document.querySelectorAll('.runtime').forEach(button=>{
+// Terminal fetch tabs
+document.querySelectorAll('.fetch-tab').forEach(button=>{
   button.addEventListener('click',()=>{
-    document.querySelectorAll('.runtime').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    document.querySelectorAll('.fetch-tab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
     button.classList.add('active');
     button.setAttribute('aria-selected','true');
-    const runtime=button.dataset.runtime,command=button.dataset.command;
-    document.getElementById('term-command').textContent=command;
-    document.getElementById('term-engine').textContent='runtime: '+runtime+' · local inference';
-    document.getElementById('term-answer').textContent='GRM-3 Nano configured for '+runtime+'.';
-    document.getElementById('term-status').textContent='configured';
+    document.getElementById('fetch-cmd-text').textContent=button.dataset.command;
   });
 });
 
-document.getElementById('run-terminal').addEventListener('click',()=>{
-  const status=document.getElementById('term-status'),ready=document.getElementById('term-ready'),answer=document.getElementById('term-answer');
-  status.textContent='starting…';
-  ready.textContent='initializing local runtime…';
-  document.querySelector('.terminal-card').classList.add('running');
-  setTimeout(()=>{
-    status.textContent='running';
-    ready.textContent='on-device. running.';
-    answer.textContent='Local session started. Your prompts stay on this device.';
-  },550);
+document.getElementById('fetch-copy-btn').addEventListener('click',async()=>{
+  const btn=document.getElementById('fetch-copy-btn');
+  try{
+    const text=document.getElementById('fetch-cmd-text').textContent;
+    if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}
+    else{const a=document.createElement('textarea');a.value=text;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}
+    btn.textContent='Copied';
+    setTimeout(()=>btn.textContent='Copy',1400);
+  }catch(e){
+    btn.textContent='Error';
+    setTimeout(()=>btn.textContent='Copy',1400);
+  }
 });
 
-document.getElementById('copy-command').addEventListener('click',async()=>{
-  const button=document.getElementById('copy-command');
-  try{
-    const text=document.getElementById('term-command').textContent;
-    if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}
-    else{const area=document.createElement('textarea');area.value=text;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();document.execCommand('copy');area.remove()}
-    button.textContent='Copied';
-    setTimeout(()=>button.textContent='Copy',1200);
-  }catch(e){
-    button.textContent='Copy failed';
-    setTimeout(()=>button.textContent='Copy',1200);
-  }
+// Terminal list item interactions
+document.querySelectorAll('#term-list li').forEach(li=>{
+  li.addEventListener('click',()=>{
+    const action=li.dataset.action;
+    const tabMap={'run-model':'Ollama','ollama':'Ollama','mlx':'MLX','gguf':'GGUF','more':'llama.cpp'};
+    const target=tabMap[action];
+    if(target){
+      const tab=document.querySelector('.fetch-tab[data-runtime="'+target+'"]');
+      if(tab){tab.click();}
+    }
+    document.querySelector('.terminal-card').classList.add('running');
+    setTimeout(()=>document.querySelector('.terminal-card').classList.remove('running'),1800);
+  });
 });
 
 // Custom cursor
