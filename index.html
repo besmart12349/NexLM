@@ -122,6 +122,13 @@ nav button[aria-current="page"]{opacity:.5;pointer-events:none}
 .fact:hover{transform:translateX(8px);background:var(--glass);backdrop-filter:blur(10px)}
 .fact-label{font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px}
 .fact-value{font-size:16px;line-height:1.55}
+.fact-value table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+.fact-value table th{text-align:left;font:10px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.8px;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.fact-value table td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4}
+.fact-value table tr:last-child td{border-bottom:0}
+.fact-value table .bench-score{font-family:ui-monospace,monospace;font-size:13px;color:#246de6;font-weight:600}
+.fact-value table .bench-note{font-size:11px;color:var(--muted);display:block;margin-top:2px}
+.bench-section-head{font:10px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:14px 0 4px;display:block}
 
 /* News */
 .news-row{will-change:transform;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:28px 4vw;text-align:left;cursor:pointer;display:grid;align-items:center;gap:20px;transition:background .2s,transform .2s;grid-template-columns:16% 1fr 35px;appearance:none;color:inherit;font-family:inherit}
@@ -479,8 +486,66 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
 
 <script>
 // Data
+const grm3BenchmarkHTML = `
+<span class="bench-section-head">Language — Non-Thinking Mode</span>
+<table><thead><tr><th>Benchmark</th><th>Score</th><th>Description</th></tr></thead><tbody>
+<tr><td>MMLU-Pro</td><td class="bench-score">29.7</td><td>Multi-task language understanding (pro)</td></tr>
+<tr><td>MMLU-Redux</td><td class="bench-score">48.5</td><td>Knowledge &amp; STEM — standard</td></tr>
+<tr><td>C-Eval</td><td class="bench-score">46.4</td><td>Chinese language evaluation</td></tr>
+<tr><td>SuperGPQA</td><td class="bench-score">16.9</td><td>Graduate-level science questions</td></tr>
+<tr><td>IFEval</td><td class="bench-score">52.1</td><td>Instruction following evaluation</td></tr>
+<tr><td>MMMLU</td><td class="bench-score">34.1</td><td>Multilingual MMLU</td></tr>
+</tbody></table>
+<span class="bench-section-head">Knowledge &amp; STEM — Thinking Mode <span style="color:#4b8dff;font-size:9px;letter-spacing:.5px">(GRM-3 NANO OPTIMIZED)</span></span>
+<table><thead><tr><th>Benchmark</th><th>Score</th><th>Description</th></tr></thead><tbody>
+<tr><td>MMLU-Pro</td><td class="bench-score">47.3</td><td>Multi-task language understanding</td></tr>
+<tr><td>MMLU-Redux</td><td class="bench-score">64.5</td><td>Knowledge &amp; STEM — thinking</td></tr>
+<tr><td>C-Eval</td><td class="bench-score">55.5</td><td>Chinese language — thinking</td></tr>
+<tr><td>SuperGPQA</td><td class="bench-score">26.3</td><td>Graduate science — thinking</td></tr>
+<tr><td>GPQA</td><td class="bench-score">16.9</td><td>Graduate physics — thinking</td></tr>
+</tbody></table>
+<span class="bench-section-head">Instruction Following — Thinking Mode <span style="color:#4b8dff;font-size:9px;letter-spacing:.5px">(GRM-3 NANO OPTIMIZED)</span></span>
+<table><thead><tr><th>Benchmark</th><th>Score</th><th>Description</th></tr></thead><tbody>
+<tr><td>IFEval</td><td class="bench-score">49.0</td><td>Instruction following — thinking</td></tr>
+<tr><td>IFBench</td><td class="bench-score">26.0</td><td>Instruction following benchmark</td></tr>
+<tr><td>MultiChallenge</td><td class="bench-score">23.9</td><td>Multi-turn challenge — thinking</td></tr>
+<tr><td>MMMLU</td><td class="bench-score">49.3</td><td>Multilingual MMLU — thinking</td></tr>
+</tbody></table>
+<span class="bench-section-head">Vision Language (Multimodal)</span>
+<table><thead><tr><th>Benchmark</th><th>Score</th><th>Description</th></tr></thead><tbody>
+<tr><td>MMMU</td><td class="bench-score">49.0</td><td>Multimodal university understanding</td></tr>
+<tr><td>MathVista (mini)</td><td class="bench-score">62.2</td><td>Mathematical visual reasoning</td></tr>
+<tr><td>RealWorldQA</td><td class="bench-score">63.4</td><td>Real-world visual QA</td></tr>
+<tr><td>MMStar</td><td class="bench-score">58.3</td><td>Multi-modal star benchmark</td></tr>
+<tr><td>MMBench EN-DEV</td><td class="bench-score">69.9</td><td>Multimodal benchmark — English</td></tr>
+<tr><td>OCRBench</td><td class="bench-score">74.5</td><td>Document text extraction</td></tr>
+<tr><td>VideoMME (w/sub)</td><td class="bench-score">63.8</td><td>Video multimodal evaluation</td></tr>
+<tr><td>RefCOCO (avg)</td><td class="bench-score">79.3</td><td>Visual grounding — object reference</td></tr>
+</tbody></table>
+<span class="bench-section-head">Agent &amp; Long Context — Thinking Mode</span>
+<table><thead><tr><th>Benchmark</th><th>Score</th><th>Description</th></tr></thead><tbody>
+<tr><td>BFCL-V4</td><td class="bench-score">25.3</td><td>Function calling / tool use</td></tr>
+<tr><td>TAU2-Bench</td><td class="bench-score">11.6</td><td>Conversational agent benchmark</td></tr>
+<tr><td>LongBench v2</td><td class="bench-score">26.1</td><td>Long-context document understanding</td></tr>
+</tbody></table>`;
+
 const models=[
-  {name:'GRM-3 Nano',group:'Reasoning',tag:'Reasoning',desc:'Lightweight complex reasoning for constrained deployments.',facts:[['Category','Lightweight complex reasoning'],['Status','Pretraining complete'],['Brief','A compact system designed to bring sophisticated reasoning to efficient deployments.']]},
+  {name:'GRM-3 Nano',group:'Reasoning',tag:'Reasoning · Multimodal · Sub-1B',desc:'Sub-1B parameter model optimized for complex and deep reasoning with native multimodal support.',facts:[
+    ['Category','Reasoning · Multimodal'],
+    ['Parameters','Sub-1B — under one billion parameters, optimized for edge and on-device deployment'],
+    ['Status','Pretraining complete'],
+    ['Architecture','Hybrid Gated DeltaNet + Attention · 24-layer dense architecture · 262,144-token native context window'],
+    ['Multimodal','Natively multimodal. Supports text, image, and video inputs through a unified vision-language architecture. Image uploads are fully supported — submit a photo, diagram, screenshot, or document and GRM-3 Nano will reason over its contents alongside your prompt.'],
+    ['Thinking Mode','Full thinking / chain-of-thought mode supported. Activating deep reasoning unlocks measurably stronger performance across knowledge, STEM, instruction following, and visual tasks — benchmarked and reflected in the scores below.'],
+    ['Description','GRM-3 Nano is NexLM\'s first public model and the flagship of the sub-1B class. It is purpose-built for complex and deep reasoning in constrained deployment environments — phone-class hardware, embedded systems, edge devices, and CPU-only machines. Unlike most small models that sacrifice capability for size, GRM-3 Nano is engineered around a single premise: useful intelligence does not require a data center.\n\nThe architecture is a hybrid Gated DeltaNet and Gated Attention design — a 3:1 ratio of linear-attention layers to standard attention — enabling constant-memory inference across its full 262K-token context window. This means GRM-3 Nano can process long documents, extended conversations, and multi-page inputs without memory pressure on edge hardware.\n\nVision is built in from the ground up, not bolted on. GRM-3 Nano processes images and video through the same weights and training pipeline as its language capability. Submit a screenshot, a diagram, a chart, or a photograph and the model reasons over it natively — no external vision module, no API call.\n\nThinking mode unlocks a second performance tier. When deep reasoning is enabled, GRM-3 Nano engages chain-of-thought processing, producing measurably higher benchmark scores across STEM, instruction following, and visual understanding. This is the mode optimized for tasks that require more than a fast lookup — mathematical reasoning, structured analysis, multi-step problem solving.\n\nDeployment targets include Ollama, MLX, GGUF (llama.cpp), and standard HuggingFace Transformers. The model runs at approximately 1.6GB VRAM at BF16 precision and under 0.5GB at 4-bit quantization.'],
+    ['Benchmarks',grm3BenchmarkHTML],
+    ['Runtimes','Ollama · MLX · GGUF · llama.cpp · HuggingFace Transformers'],
+    ['VRAM (BF16)','~1.6 GB'],
+    ['VRAM (4-bit)','~0.5 GB — runs on phones, Raspberry Pi, and CPU-only systems'],
+    ['Context Window','262,144 tokens (native)'],
+    ['Languages','201 languages supported'],
+    ['License','Apache 2.0']
+  ]},
   {name:'GRM-4 Edge',group:'Foundation',tag:'5B A1B / 9B A2B',desc:'Edge-focused architecture in two performance profiles.',facts:[['Configurations','5B A1B · 9B A2B'],['Status','Architecture and first steps complete'],['Brief','An edge-focused GRM-4 architecture engineered in two distinct performance profiles.']]},
   {name:'GRM-4 Core',group:'Foundation',tag:'Foundation',desc:'The general-purpose foundation of the GRM-4 family.',facts:[['Category','General-purpose foundation model'],['Status','In development'],['Brief','The general-purpose center of the GRM-4 family.']]},
   {name:'GRM-4 Code',group:'Coding',tag:'Coding',desc:'A focused model for software development workflows.',facts:[['Category','Coding'],['Status','In development'],['Brief','A GRM-4 specialization for software development workflows.']]},
@@ -581,7 +646,10 @@ function openModel(i){
   const m=models[i];
   sessionStorage.setItem('nexlmModel',i);
   document.getElementById('detail-title').innerHTML=m.name.replace(' ','<br>');
-  document.getElementById('facts').innerHTML=m.facts.map(f=>`<div class="fact"><div class="fact-label">${f[0]}</div><div class="fact-value">${f[1]}</div></div>`).join('');
+  document.getElementById('facts').innerHTML=m.facts.map(f=>{
+    const isHTML=f[1]&&(f[1].toString().includes('<table')||f[1].toString().includes('<span'));
+    return `<div class="fact"><div class="fact-label">${f[0]}</div><div class="fact-value">${isHTML?f[1]:f[1].toString().replace(/\n/g,'<br>')}</div></div>`;
+  }).join('');
   go('detail');
 }
 
