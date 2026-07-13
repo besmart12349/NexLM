@@ -25,9 +25,7 @@ button,a{color:inherit}
 
 /* Header */
 header{height:70px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;position:sticky;top:18px;z-index:10;width:min(92vw,920px);margin:0 auto -58px;border:1px solid rgba(255,255,255,.9);border-radius:999px;background:rgba(250,250,247,.52);box-shadow:0 8px 28px rgba(33,32,27,.10),inset 0 1px 1px rgba(255,255,255,.92);backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%)}
-.logo{font-size:22px;font-weight:800;letter-spacing:-2px;text-decoration:none;display:flex;align-items:center;gap:7px}
-.logo-mark{width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,#171716 60%,#4b8dff 100%);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-.logo-mark svg{width:12px;height:12px;fill:none;stroke:#f7f6f1;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.logo{font-size:22px;font-weight:800;letter-spacing:-2px;text-decoration:none}
 .logo small{font-size:9px;letter-spacing:0;margin-left:1px}
 nav{display:flex;gap:20px;align-items:center}
 nav button,.nav-toggle{background:0;border:0;padding:8px 0;cursor:pointer;font:11px ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase;transition:opacity .2s,transform .2s}
@@ -352,10 +350,7 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
 <noscript><div style="padding:40px;text-align:center;font-family:Georgia,serif;font-size:18px">NexLM requires JavaScript to run. Please enable JavaScript in your browser.</div></noscript>
 <a class="skip-link" href="#home">Skip to content</a>
 <header>
-  <a class="logo" href="#home">
-    <span class="logo-mark"><svg viewBox="0 0 14 14"><polyline points="2,10 5,4 8,8 11,3"/></svg></span>
-    NexLM<small>AI</small>
-  </a>
+  <a class="logo" href="#home">NexLM<small>AI</small></a>
   <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
   <nav id="primary-nav" aria-label="Primary navigation">
     <button data-nav="models">Models</button>
@@ -570,7 +565,6 @@ const grm3BenchmarkHTML = `
 <tr><td>LongBench v2</td><td class="bench-score">26.1</td><td>Long-context document understanding</td></tr>
 </tbody></table>`;
 
-// statusBadge: 'released' | 'eval' | 'indev' | 'gated'
 const models=[
   {name:'GRM-3 Nano',group:'Reasoning',tag:'Reasoning · Multimodal · Sub-1B',statusBadge:'eval',statusLabel:'Finishing eval',desc:'Sub-1B parameter model optimized for complex and deep reasoning with native multimodal support.',facts:[
     ['Category','Reasoning · Multimodal'],
