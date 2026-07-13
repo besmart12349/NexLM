@@ -25,12 +25,14 @@ button,a{color:inherit}
 
 /* Header */
 header{height:70px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;position:sticky;top:18px;z-index:10;width:min(92vw,920px);margin:0 auto -58px;border:1px solid rgba(255,255,255,.9);border-radius:999px;background:rgba(250,250,247,.52);box-shadow:0 8px 28px rgba(33,32,27,.10),inset 0 1px 1px rgba(255,255,255,.92);backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%)}
-.logo{font-size:22px;font-weight:800;letter-spacing:-2px;text-decoration:none}
-.logo small{font-size:9px;letter-spacing:0;margin-left:3px}
-nav{display:flex;gap:20px}
+.logo{font-size:22px;font-weight:800;letter-spacing:-2px;text-decoration:none;display:flex;align-items:center;gap:7px}
+.logo-mark{width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,#171716 60%,#4b8dff 100%);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark svg{width:12px;height:12px;fill:none;stroke:#f7f6f1;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.logo small{font-size:9px;letter-spacing:0;margin-left:1px}
+nav{display:flex;gap:20px;align-items:center}
 nav button,.nav-toggle{background:0;border:0;padding:8px 0;cursor:pointer;font:11px ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase;transition:opacity .2s,transform .2s}
 nav button:hover{opacity:.55;transform:translateY(-1px)}
-nav button[aria-current="page"]{opacity:.5;pointer-events:none}
+nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5px solid var(--ink);padding-bottom:6px}
 .nav-toggle{display:none}
 
 /* Pages */
@@ -39,24 +41,25 @@ nav button[aria-current="page"]{opacity:.5;pointer-events:none}
 @keyframes pageIn{from{opacity:0;transform:translateY(16px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
 
 /* Hero */
-.hero{padding:88px 4vw 30px;min-height:calc(100vh - 70px);display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
-.hero:after{content:'';position:absolute;width:42vw;height:42vw;border-radius:50%;right:-15vw;bottom:-25vw;background:linear-gradient(135deg,rgba(255,255,255,.6),rgba(216,255,49,.18));border:1px solid rgba(255,255,255,.8);box-shadow:inset 10px 10px 30px rgba(255,255,255,.7),var(--shadow);backdrop-filter:blur(14px);animation:orb 13s ease-in-out infinite;pointer-events:none}
+.hero{padding:88px 4vw 30px;min-height:calc(100vh - 70px);display:flex;flex-direction:column;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero:after{content:'';position:absolute;width:42vw;height:42vw;border-radius:50%;right:-15vw;bottom:-25vw;background:conic-gradient(from 200deg,rgba(75,141,255,.18),rgba(255,255,255,.55),rgba(75,141,255,.10),rgba(255,255,255,.6));border:1px solid rgba(255,255,255,.8);box-shadow:inset 10px 10px 30px rgba(255,255,255,.7),var(--shadow);backdrop-filter:blur(14px);animation:orb 13s ease-in-out infinite;pointer-events:none}
 @keyframes orb{50%{transform:translate(-45px,-25px) scale(1.1)}}
-.hero{position:relative;overflow:hidden}
 .mono{font:11px ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase}
 .topline{display:flex;justify-content:space-between}
 .status:before{content:'•';color:#4b8dff;font-size:24px;vertical-align:-3px;margin-right:5px}
 .hero h1{position:relative;z-index:1;animation:rise .9s .13s cubic-bezier(.16,1,.3,1) both;font:clamp(70px,12vw,175px)/.78 Georgia,serif;letter-spacing:-.09em;font-weight:400;max-width:1100px;margin:auto 0}
 .hero h1 i{font-weight:400}
+.hero h1 .accent{color:#4b8dff;font-style:italic}
 @keyframes rise{from{opacity:0;transform:translateY(45px);letter-spacing:-.12em}to{opacity:1;transform:none}}
 .hero-foot{display:flex;justify-content:space-between;align-items:end;gap:20px}
 .hero p{font-size:16px;line-height:1.5;max-width:365px;margin:0}
 .hero-foot>div{display:flex;align-items:end;gap:35px;max-width:620px}
 .hero-actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
-.primary-cta{display:inline-flex;align-items:center;gap:21px;background:var(--ink);color:var(--paper);text-decoration:none;padding:13px 15px;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.8px;transition:transform .24s,background .24s}
-.primary-cta:hover{background:#286fdf;transform:translateY(-3px)}
+.primary-cta{display:inline-flex;align-items:center;gap:21px;background:linear-gradient(135deg,#171716 0%,#1e3a6e 100%);color:var(--paper);text-decoration:none;padding:13px 15px;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.8px;transition:transform .24s,background .24s,box-shadow .24s;box-shadow:0 4px 18px rgba(23,23,22,.22)}
+.primary-cta:hover{background:linear-gradient(135deg,#286fdf 0%,#1a4fa8 100%);transform:translateY(-3px);box-shadow:0 8px 28px rgba(40,111,223,.32)}
 .primary-cta b{font-size:17px;font-weight:400}
-.arrowlink{text-decoration:none;font:11px ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:7px}
+.arrowlink{text-decoration:none;font:11px ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:7px;transition:opacity .2s}
+.arrowlink:hover{opacity:.55}
 
 /* Local section */
 .local{display:grid;grid-template-columns:1fr 1fr;gap:7vw;padding:9vw 4vw;border-bottom:1px solid var(--line);position:relative;overflow:hidden;scroll-margin-top:92px}
@@ -68,7 +71,7 @@ nav button[aria-current="page"]{opacity:.5;pointer-events:none}
 .local-steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
 .local-steps b{font:10px ui-monospace,monospace;color:#246de6}
 
-/* Terminal — Ollama-style minimalist */
+/* Terminal */
 .terminal-card{align-self:center;justify-self:end;border-radius:16px;overflow:hidden;background:#1a1a18;box-shadow:0 28px 60px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.07);transform:rotate(1.3deg);transition:transform .35s;max-width:480px;width:100%}
 .terminal-card:hover{transform:rotate(0) translateY(-7px)}
 .terminal-bar{height:44px;background:#252522;display:flex;align-items:center;gap:7px;padding:0 16px;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -98,7 +101,8 @@ nav button[aria-current="page"]{opacity:.5;pointer-events:none}
 .fetch-cmd-text{word-break:break-all;line-height:1.5}
 .fetch-copy-btn{flex-shrink:0;background:transparent;border:1px solid rgba(255,255,255,.15);color:#888;font:9px ui-monospace,monospace;padding:5px 8px;border-radius:5px;cursor:pointer;letter-spacing:.4px;text-transform:uppercase;transition:.15s;white-space:nowrap}
 .fetch-copy-btn:hover{color:#e8e6df;border-color:rgba(255,255,255,.35)}
-.terminal-card.running .terminal-dot.green{box-shadow:0 0 0 4px rgba(40,200,64,.22)}
+.terminal-card.running .terminal-dot.green{box-shadow:0 0 0 4px rgba(40,200,64,.22);animation:pulse-green 1.8s ease-in-out}
+@keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(40,200,64,.5)}70%{box-shadow:0 0 0 8px rgba(40,200,64,0)}100%{box-shadow:0 0 0 0 rgba(40,200,64,0)}}
 
 /* Intro shared */
 .intro{padding:8vw 4vw 5vw;border-bottom:1px solid var(--line)}
@@ -106,8 +110,25 @@ nav button[aria-current="page"]{opacity:.5;pointer-events:none}
 
 /* Model list */
 .list-head{padding:22px 4vw;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
-.model-row{will-change:transform;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:28px 4vw;text-align:left;cursor:pointer;display:grid;align-items:center;gap:20px;transition:background .2s;grid-template-columns:31% 18% 1fr 35px;position:relative;appearance:none;color:inherit;font-family:inherit}
-.model-row:hover{transform:scale(1.007);box-shadow:var(--shadow);z-index:1;background:linear-gradient(110deg,rgba(75,141,255,.78),rgba(255,255,255,.72));backdrop-filter:blur(14px)}
+
+/* Status badge */
+.status-badge{display:inline-flex;align-items:center;gap:5px;font:9px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.7px;padding:4px 8px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.status-badge .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.status-badge.released{background:rgba(40,200,64,.10);border-color:rgba(40,200,64,.30);color:#1a7a30}
+.status-badge.released .dot{background:#28c840}
+.status-badge.eval{background:rgba(254,188,46,.10);border-color:rgba(254,188,46,.35);color:#7a5a00}
+.status-badge.eval .dot{background:#febc2e}
+.status-badge.indev{background:rgba(75,141,255,.10);border-color:rgba(75,141,255,.30);color:#1a3a7a}
+.status-badge.indev .dot{background:#4b8dff}
+.status-badge.gated{background:rgba(255,60,60,.10);border-color:rgba(255,60,60,.30);color:#7a1a1a}
+.status-badge.gated .dot{background:#ff3c3c}
+
+/* Status legend */
+.status-legend{padding:14px 4vw;display:flex;gap:18px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line);background:rgba(255,255,255,.18)}
+.legend-label{font:9px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-right:4px}
+
+.model-row{will-change:transform;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:28px 4vw;text-align:left;cursor:pointer;display:grid;align-items:center;gap:20px;transition:background .2s,transform .2s,box-shadow .2s;grid-template-columns:28% 16% 1fr 120px 35px;position:relative;appearance:none;color:inherit;font-family:inherit}
+.model-row:hover{transform:scale(1.005);box-shadow:0 4px 32px rgba(23,23,22,.08),0 1px 0 rgba(255,255,255,.9);z-index:1;background:rgba(255,255,255,.55);backdrop-filter:blur(14px)}
 .model-name{font:clamp(31px,4.5vw,63px)/1 Georgia,serif;letter-spacing:-.06em}
 .tag{font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px}
 .description{font-size:14px;line-height:1.5;max-width:320px}
@@ -256,7 +277,7 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
   nav.open{display:flex}
   .nav-toggle{display:block}
   .hero{padding-top:84px;min-height:650px}
-  .hero h1{font-size:78px}
+  .hero h1{font-size:72px;letter-spacing:-.10em}
   .hero-foot{align-items:start;flex-direction:column;gap:35px}
   .hero p{max-width:360px}
   .hero-foot>div{display:block}
@@ -271,6 +292,7 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
   .model-row{padding:24px 20px;grid-template-columns:1fr 30px;gap:10px}
   .model-row .tag,.model-row .description{grid-column:1}
   .model-row .go{grid-column:2;grid-row:1/4}
+  .model-row .status-badge{grid-column:1}
   .model-open,.read-article{display:block;grid-column:1;font-size:9px;color:#286fdf}
   .news-row{padding:25px 20px;grid-template-columns:1fr 30px;gap:12px}
   .news-row p{grid-column:1}
@@ -315,11 +337,12 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
   .fetch-tab{flex:1 1 auto}
   .fetch-cmd-display{flex-direction:column;align-items:stretch}
   .fetch-copy-btn{width:100%;text-align:center}
+  .status-legend{gap:10px;padding:12px 20px}
 }
 @media(max-width:380px){
   header{width:calc(100vw - 18px)}
   .hf-nav{display:none}
-  .hero h1{font-size:67px}
+  .hero h1{font-size:60px;letter-spacing:-.10em}
 }
 /* home focus */
 #home:focus{outline:none}
@@ -329,7 +352,10 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
 <noscript><div style="padding:40px;text-align:center;font-family:Georgia,serif;font-size:18px">NexLM requires JavaScript to run. Please enable JavaScript in your browser.</div></noscript>
 <a class="skip-link" href="#home">Skip to content</a>
 <header>
-  <a class="logo" href="#home">NexLM<small>AI</small></a>
+  <a class="logo" href="#home">
+    <span class="logo-mark"><svg viewBox="0 0 14 14"><polyline points="2,10 5,4 8,8 11,3"/></svg></span>
+    NexLM<small>AI</small>
+  </a>
   <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
   <nav id="primary-nav" aria-label="Primary navigation">
     <button data-nav="models">Models</button>
@@ -346,15 +372,15 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
       <span>Independent artificial intelligence<br>Built for the edge</span>
       <span class="status">Building now — 2026</span>
     </div>
-    <h1>Intelligence,<br><i>made</i> closer.</h1>
+    <h1>Intelligence,<br><span class="accent">made</span> closer.</h1>
     <div class="hero-foot">
       <div>
         <p>Capable language models that keep powerful intelligence in your hands—not somewhere else.</p>
         <div class="hero-actions">
           <a class="primary-cta" href="#models">Explore models <b>→</b></a>
+          <a class="arrowlink" href="#local">Built for local inference ↓</a>
         </div>
       </div>
-      <a class="arrowlink" href="#local">Built for local inference ↓</a>
     </div>
   </div>
   <section class="local" id="local" aria-label="Local inference">
@@ -410,6 +436,13 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <p class="models-lede">A focused family of models for reasoning, local deployment, code, and specialized work. Select a system to view its current direction.</p>
   </div>
   <div class="list-head mono"><span>Six systems, one direction</span><span>01—06</span></div>
+  <div class="status-legend" role="note" aria-label="Model status legend">
+    <span class="legend-label">Status</span>
+    <span class="status-badge released"><span class="dot"></span>Released</span>
+    <span class="status-badge eval"><span class="dot"></span>Finishing eval</span>
+    <span class="status-badge indev"><span class="dot"></span>In development</span>
+    <span class="status-badge gated"><span class="dot"></span>Security / approval gated</span>
+  </div>
   <div class="filterbar" role="group" aria-label="Filter models">
     <button class="filter active" data-filter="all" aria-pressed="true">All</button>
     <button class="filter" data-filter="Foundation" aria-pressed="false">Foundation</button>
@@ -494,7 +527,6 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
 <div id="cursor" aria-hidden="true"></div>
 
 <script>
-// Data
 const grm3BenchmarkHTML = `
 <span class="bench-section-head">Language — Non-Thinking Mode</span>
 <table><thead><tr><th>Benchmark</th><th>Score</th><th>Description</th></tr></thead><tbody>
@@ -538,8 +570,9 @@ const grm3BenchmarkHTML = `
 <tr><td>LongBench v2</td><td class="bench-score">26.1</td><td>Long-context document understanding</td></tr>
 </tbody></table>`;
 
+// statusBadge: 'released' | 'eval' | 'indev' | 'gated'
 const models=[
-  {name:'GRM-3 Nano',group:'Reasoning',tag:'Reasoning · Multimodal · Sub-1B',desc:'Sub-1B parameter model optimized for complex and deep reasoning with native multimodal support.',facts:[
+  {name:'GRM-3 Nano',group:'Reasoning',tag:'Reasoning · Multimodal · Sub-1B',statusBadge:'eval',statusLabel:'Finishing eval',desc:'Sub-1B parameter model optimized for complex and deep reasoning with native multimodal support.',facts:[
     ['Category','Reasoning · Multimodal'],
     ['Parameters','Sub-1B — under one billion parameters, optimized for edge and on-device deployment'],
     ['Status','Pretraining complete'],
@@ -555,11 +588,11 @@ const models=[
     ['Languages','201 languages supported'],
     ['License','Apache 2.0']
   ]},
-  {name:'GRM-4 Edge',group:'Foundation',tag:'5B A1B / 9B A2B',desc:'Edge-focused architecture in two performance profiles.',facts:[['Configurations','5B A1B · 9B A2B'],['Status','Architecture and first steps complete'],['Brief','An edge-focused GRM-4 architecture engineered in two distinct performance profiles.']]},
-  {name:'GRM-4 Core',group:'Foundation',tag:'Foundation',desc:'The general-purpose foundation of the GRM-4 family.',facts:[['Category','General-purpose foundation model'],['Status','In development'],['Brief','The general-purpose center of the GRM-4 family.']]},
-  {name:'GRM-4 Code',group:'Coding',tag:'Coding',desc:'A focused model for software development workflows.',facts:[['Category','Coding'],['Status','In development'],['Brief','A GRM-4 specialization for software development workflows.']]},
-  {name:'Oden-1 Preview',group:'Preview',tag:'Cyber / Preview',desc:'A specialized cyber-security research assistant.',facts:[['Category','Cyber-security research'],['Status','Preview'],['Brief','A specialized AI for defensive security research, analysis, and cyber workflows.']]},
-  {name:'CoPilot-1 Preview',group:'Preview',tag:'Aviation / Preview',desc:'An always-on aviation LLM, made with AeroAI.',facts:[['Category','Aviation'],['Built with','AeroAI'],['Status','Preview'],['Brief','An always-on aviation language model for the flying community.']]}
+  {name:'GRM-4 Edge',group:'Foundation',tag:'5B A1B / 9B A2B',statusBadge:'indev',statusLabel:'In development',desc:'Edge-focused architecture in two performance profiles.',facts:[['Configurations','5B A1B · 9B A2B'],['Status','Architecture and first steps complete'],['Brief','An edge-focused GRM-4 architecture engineered in two distinct performance profiles.']]},
+  {name:'GRM-4 Core',group:'Foundation',tag:'Foundation',statusBadge:'indev',statusLabel:'In development',desc:'The general-purpose foundation of the GRM-4 family.',facts:[['Category','General-purpose foundation model'],['Status','In development'],['Brief','The general-purpose center of the GRM-4 family.']]},
+  {name:'GRM-4 Code',group:'Coding',tag:'Coding',statusBadge:'indev',statusLabel:'In development',desc:'A focused model for software development workflows.',facts:[['Category','Coding'],['Status','In development'],['Brief','A GRM-4 specialization for software development workflows.']]},
+  {name:'Oden-1 Preview',group:'Preview',tag:'Cyber / Preview',statusBadge:'gated',statusLabel:'Security gated',desc:'A specialized cyber-security research assistant.',facts:[['Category','Cyber-security research'],['Status','Preview'],['Brief','A specialized AI for defensive security research, analysis, and cyber workflows.']]},
+  {name:'CoPilot-1 Preview',group:'Preview',tag:'Aviation / Preview',statusBadge:'gated',statusLabel:'Approval gated',desc:'An always-on aviation LLM, made with AeroAI.',facts:[['Category','Aviation'],['Built with','AeroAI'],['Status','Preview'],['Brief','An always-on aviation language model for the flying community.']]}
 ];
 const news=[
   {date:'July 2026',number:'01',title:'NexLM exists in stealth—with revolutionary on-device LMs.',dek:'NexLM is building a new generation of local language models: capable systems designed to run closer to the people who use them.',body:['NexLM is operating in stealth while we build the foundations for a more local AI future. Our work starts from a direct belief: useful intelligence should be able to live on the hardware you already trust.','That means focusing on efficient architectures, practical deployment formats, and the details that turn a model into a tool. We are designing for local runtimes including MLX, GGUF, Ollama, and llama.cpp.','We are early, deliberate, and building in public only when a release is ready to be useful. This is the first note from NexLM.']},
@@ -569,7 +602,6 @@ const news=[
   {date:'July 2026',number:'05',title:'How NexLM accelerates on-device inference without diminishing LM safety.',dek:'Efficiency should narrow the distance between a user and their model—not narrow the standard for safe behavior.',body:['On-device inference changes where computation happens. It does not change the need for responsible model behavior. NexLM treats efficiency and safety as complementary engineering requirements.','Our approach focuses on efficient architectures and compatible local runtimes while preserving deliberate evaluation and post-training work. A faster or smaller system still needs clear behavioral boundaries and careful testing.','Local execution can also improve the privacy posture of a workflow by keeping prompts and outputs on the device. Privacy is valuable, but it is not a substitute for model safety; both need to be built in from the start.']}
 ];
 
-// Routing
 function go(id){
   location.hash=id;
   document.querySelector('nav').classList.remove('open');
@@ -607,19 +639,16 @@ function route(){
   });
 }
 
-// Nav buttons
 document.querySelectorAll('[data-nav]').forEach(btn=>{
   btn.addEventListener('click',()=>go(btn.dataset.nav));
 });
 
-// Nav toggle (mobile)
 document.getElementById('nav-toggle').addEventListener('click',()=>{
   const nav=document.querySelector('nav');
   const open=nav.classList.toggle('open');
   document.getElementById('nav-toggle').setAttribute('aria-expanded',open?'true':'false');
 });
 
-// Back buttons
 document.getElementById('back-to-news').addEventListener('click',()=>{
   sessionStorage.removeItem('nexlmArticle');
   go('news');
@@ -629,12 +658,11 @@ document.getElementById('back-to-models').addEventListener('click',()=>{
   go('models');
 });
 
-// Models
 function renderModels(filter='all'){
   document.getElementById('model-list').innerHTML=models
     .map((m,i)=>({m,i}))
     .filter(x=>filter==='all'||x.m.group===filter)
-    .map(({m,i})=>`<button class="model-row" data-model-index="${i}"><span class="model-name">${m.name}</span><span class="tag">${m.tag}</span><span class="description">${m.desc}</span><span class="model-open mono">View system</span><span class="go" aria-hidden="true">↗</span></button>`)
+    .map(({m,i})=>`<button class="model-row" data-model-index="${i}"><span class="model-name">${m.name}</span><span class="tag">${m.tag}</span><span class="description">${m.desc}</span><span class="status-badge ${m.statusBadge}"><span class="dot"></span>${m.statusLabel}</span><span class="model-open mono">View system</span><span class="go" aria-hidden="true">↗</span></button>`)
     .join('');
   document.querySelectorAll('.model-row').forEach(row=>{
     row.addEventListener('click',()=>openModel(Number(row.dataset.modelIndex)));
@@ -662,7 +690,6 @@ function openModel(i){
   go('detail');
 }
 
-// News
 function renderNews(){
   document.getElementById('news-list').innerHTML=news
     .map((n,i)=>`<button class="news-row" data-news-index="${i}"><span class="mono">Dispatch ${n.number} / ${n.date}</span><h2>${n.title}</h2><span class="go" aria-hidden="true">↗</span><p>${n.dek}</p><span class="read-article mono">Read dispatch →</span></button>`)
@@ -683,7 +710,6 @@ function openArticle(i){
   go('article');
 }
 
-// Terminal fetch tabs
 document.querySelectorAll('.fetch-tab').forEach(button=>{
   button.addEventListener('click',()=>{
     document.querySelectorAll('.fetch-tab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
@@ -707,7 +733,6 @@ document.getElementById('fetch-copy-btn').addEventListener('click',async()=>{
   }
 });
 
-// Terminal list item interactions
 document.querySelectorAll('#term-list li').forEach(li=>{
   li.addEventListener('click',()=>{
     const action=li.dataset.action;
@@ -722,7 +747,6 @@ document.querySelectorAll('#term-list li').forEach(li=>{
   });
 });
 
-// Custom cursor
 const cursor=document.getElementById('cursor');
 document.addEventListener('pointermove',e=>{cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px)`});
 document.querySelectorAll('a,button').forEach(el=>{
@@ -730,7 +754,6 @@ document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('pointerleave',()=>cursor.classList.remove('hover'));
 });
 
-// Scroll reveal
 const revealItems=document.querySelectorAll('.home-depth,.release-strip,.use-cases,.local,.model-row,.news-row,.research-grid article');
 revealItems.forEach(el=>el.classList.add('reveal'));
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
@@ -738,7 +761,6 @@ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
 }),{threshold:.12});
 revealItems.forEach(el=>observer.observe(el));
 
-// Router
 addEventListener('hashchange',route);
 route();
 </script>
