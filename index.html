@@ -62,6 +62,7 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .terminal-body{padding:20px 20px 8px;color:#e8e6df;font:13px/1.7 ui-monospace,monospace;min-height:190px}
 .term-prompt{color:#555;user-select:none}
 .term-cmd{color:#e8e6df}
+.term-comment{color:#4b8dff;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin:14px 0 4px;display:block}
 .term-list{margin:4px 0 0;padding:0;list-style:none}
 .term-list li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);color:#bdbbb4;cursor:pointer;display:flex;align-items:center;gap:8px;font:12px ui-monospace,monospace}
 .term-list li:last-child{border-bottom:0}
@@ -181,6 +182,8 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
   .fact{grid-template-columns:1fr;gap:10px}
   .article-body{margin-left:0}
   .hf-card{margin:45px 20px;padding:28px 22px;display:block}
+  .research-grid{grid-template-columns:1fr}
+  .research-grid article,.research-grid article:nth-child(odd),.research-grid article:nth-child(even){border-right:0;padding:28px 0;min-height:0}
   .fetch-tabs{flex-wrap:wrap}
   .fetch-tab{flex:1 1 auto}
   .fetch-cmd-display{flex-direction:column;align-items:stretch}
@@ -279,11 +282,15 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
   <div class="intro"><span class="mono">NexLM / Apps</span><h1>Apps</h1><p class="models-lede">Tools for running and working with NexLM systems on your machine.</p></div>
   <div class="research-grid">
     <article><span class="mono">01 / CLI</span><h2 class="serif">NexCLI</h2><p>A coding agent command line interface for the NexLM family of language models.</p></article>
-    <article><span class="mono">02 / Harness</span><h2 class="serif">NexLM Harness</h2><p>NexLM Harness 1.1.2. Intelligence, made closer. A local harness for running and working with NexLM models on your hardware.</p><a class="text-cta" href="#harness">View harness <b>→</b></a></article>
+    <article><span class="mono">02 / Harness</span><h2 class="serif">NexLM Harness</h2><p>NexLM Harness 1.2.0. Intelligence, made closer. A local harness for running and working with NexLM models on your hardware.</p><a class="text-cta" href="#harness">View harness <b>→</b></a></article>
   </div>
 </section>
 <section class="page" id="harness" tabindex="-1">
-  <div class="intro"><span class="mono">NexLM / Apps / Harness</span><h1>Harness</h1><p class="models-lede">NexLM Harness 1.1.2. Intelligence, made closer. The local workspace for loading, prompting, and iterating on NexLM models on your own hardware.</p></div>
+  <div class="intro">
+    <span class="mono">NexLM / Apps / Harness</span>
+    <h1>Harness <span class="status-badge indev" style="vertical-align:middle;margin-left:14px">Preview</span></h1>
+    <p class="models-lede">NexLM Harness 1.2.0. Intelligence, made closer. The local workspace for loading, prompting, and iterating on NexLM models on your own hardware.</p>
+  </div>
   <section class="local">
     <div class="local-copy">
       <span class="mono">01 / Local interface</span>
@@ -296,10 +303,16 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
       </ol>
     </div>
     <div class="terminal-card">
-      <div class="terminal-bar"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-bar-title">nexlm — harness 1.1.2</span></div>
+      <div class="terminal-bar"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-bar-title">nexlm — harness 1.2.0</span></div>
       <div class="terminal-body">
+        <span class="term-comment">Run from source</span>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">git clone https://github.com/besmart12349/NexLM-Harness.git</span></div>
         <div><span class="term-prompt">$ </span><span class="term-cmd">cd NexLM-Harness</span></div>
-        <div><span class="term-prompt">$ </span><span class="term-cmd">git checkout master</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">pnpm install</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">pnpm run build</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">pnpm dsh web</span></div>
+        <span class="term-comment">Updating</span>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">cd ~/NexLM-Harness</span></div>
         <div><span class="term-prompt">$ </span><span class="term-cmd">git pull origin master</span></div>
         <div><span class="term-prompt">$ </span><span class="term-cmd">pnpm install</span></div>
         <div><span class="term-prompt">$ </span><span class="term-cmd">pnpm run build</span></div>
@@ -307,17 +320,27 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
       </div>
     </div>
   </section>
+  <div class="research-grid" aria-label="Harness features">
+    <article><span class="mono">01 / Reasoning</span><h2 class="serif">Rich errors<br><i>&amp; thinking.</i></h2><p>Every turn surfaces the model's think steps and tool calls inline — including invalid-argument errors — so you can see exactly why a step failed and how the agent corrected course.</p></article>
+    <article><span class="mono">02 / Tool use</span><h2 class="serif">Native tool<br><i>calling.</i></h2><p>Supported models get native tool calling instead of prompt-based function emulation. Currently supported for Ollama, with more runtimes planned.</p></article>
+    <article><span class="mono">03 / Permissions</span><h2 class="serif">File &amp; workspace<br><i>permissions.</i></h2><p>Choose Read Only, Workspace Write, or Full access per session, so the agent's file and shell access matches exactly what a task needs.</p></article>
+    <article><span class="mono">04 / Modes</span><h2 class="serif">Agent<br><i>modes.</i></h2><p>Standard mode for full coding-agent capability, PTC mode for Code Mode SDK tool access, Minimal mode for a lean two-tool agent, and Creator mode for building custom agent presets.</p></article>
+  </div>
   <div class="detail">
     <button class="back" id="back-to-apps">← All apps</button>
     <div class="facts">
-      <div class="fact"><div class="fact-label">Product</div><div class="fact-value">NexLM Harness 1.1.2</div></div>
+      <div class="fact"><div class="fact-label">Product</div><div class="fact-value">NexLM Harness 1.2.0 (Preview)</div></div>
       <div class="fact"><div class="fact-label">Tagline</div><div class="fact-value">NexLM Harness — Intelligence, made closer</div></div>
       <div class="fact"><div class="fact-label">Role</div><div class="fact-value">Local workspace for the NexLM family of models</div></div>
-      <div class="fact"><div class="fact-label">Runtime</div><div class="fact-value">pnpm install · pnpm run build · pnpm dsh web</div></div>
+      <div class="fact"><div class="fact-label">Agent modes</div><div class="fact-value">Standard mode · PTC mode · Minimal mode · Creator mode</div></div>
+      <div class="fact"><div class="fact-label">Permission levels</div><div class="fact-value">Read Only · Workspace Write · Full access</div></div>
+      <div class="fact"><div class="fact-label">Tool calling</div><div class="fact-value">Native tool calling for supported models — currently Ollama</div></div>
+      <div class="fact"><div class="fact-label">Run from source</div><div class="fact-value">git clone https://github.com/besmart12349/NexLM-Harness.git<br>cd NexLM-Harness<br>pnpm install<br>pnpm run build<br>pnpm dsh web</div></div>
+      <div class="fact"><div class="fact-label">Updating</div><div class="fact-value">cd ~/NexLM-Harness<br>git pull origin master<br>pnpm install<br>pnpm run build<br>pnpm dsh web</div></div>
       <div class="fact"><div class="fact-label">Privacy</div><div class="fact-value">Designed for on-device sessions. Prompts stay on your hardware.</div></div>
     </div>
   </div>
-  <aside class="hf-card"><div><span class="mono">NexLM / Harness</span><h2 class="serif">Source,<br><i>on GitHub.</i></h2><p>NexLM Harness 1.1.2 lives in the NexLM-Harness repository.</p></div><a href="https://github.com/besmart12349/NexLM-Harness" target="_blank" rel="noopener noreferrer">View on GitHub <b>↗</b></a></aside>
+  <aside class="hf-card"><div><span class="mono">NexLM / Harness</span><h2 class="serif">Source,<br><i>on GitHub.</i></h2><p>NexLM Harness 1.2.0 lives in the NexLM-Harness repository.</p></div><a href="https://github.com/besmart12349/NexLM-Harness" target="_blank" rel="noopener noreferrer">View on GitHub <b>↗</b></a></aside>
 </section>
 <section class="page" id="news" tabindex="-1">
   <div class="intro"><span class="mono">NexLM / Dispatches</span><h1>News</h1><p class="news-lede">Product milestones, research progress, and notes from a company building intelligence for the device in front of you.</p></div>
@@ -373,7 +396,7 @@ const news=[
   {date:'July 2026',number:'05',title:'How NexLM accelerates on-device inference without diminishing LM safety.',dek:'Efficiency should narrow the distance between a user and their model—not the standard for safe behavior.',body:['On-device inference changes where computation happens. It does not change the need for responsible model behavior.']},
   {date:'August 2026',number:'06',title:'GRM-3 Nano is release imminent.',dek:'NexLM\'s first public model is moving from evaluation into release.',body:['GRM-3 Nano is now marked release imminent on the NexLM model index.']},
   {date:'August 2026',number:'07',title:'The NexLM model roadmap is updated.',dek:'GRM-3.x, Odin cyber systems, and the next generation are now listed on the public index.',body:['The Models page now reflects the current NexLM roadmap.','Statuses now include Release imminent and Planned.']},
-  {date:'August 2026',number:'08',title:'NexCLI and NexLM Harness.',dek:'Two NexLM apps for coding agents and local model work.',body:['NexCLI is a coding agent command line interface for the NexLM family of language models.','NexLM Harness 1.1.2 is the local harness for running NexLM models on your own hardware.']}
+  {date:'August 2026',number:'08',title:'NexLM Harness reaches 1.2.0.',dek:'Rich errors and thinking, native tool calling, and file/workspace permissions.',body:['NexLM Harness is now at 1.2.0 (Preview) with visible think steps and tool-call errors inline in the chat.','Native tool calling is now supported for Ollama, with more runtimes planned.','Sessions can be scoped to Read Only, Workspace Write, or Full access, and run in Standard, PTC, Minimal, or Creator mode.']}
 ];
 function go(id){location.hash=id;document.querySelector('nav').classList.remove('open');document.getElementById('nav-toggle').setAttribute('aria-expanded','false')}
 function route(){
