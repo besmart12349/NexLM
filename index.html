@@ -40,12 +40,10 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .topline{display:flex;justify-content:space-between}
 .status:before{content:'•';color:#4b8dff;font-size:24px;vertical-align:-3px;margin-right:5px}
 .hero h1{position:relative;z-index:1;animation:rise .9s .13s cubic-bezier(.16,1,.3,1) both;font:clamp(70px,12vw,175px)/.78 Georgia,serif;letter-spacing:-.09em;font-weight:400;max-width:1100px;margin:auto 0}
-.hero h1 i{font-weight:400}
 .hero h1 .accent{color:#4b8dff;font-style:italic}
 @keyframes rise{from{opacity:0;transform:translateY(45px);letter-spacing:-.12em}to{opacity:1;transform:none}}
 .hero-foot{display:flex;justify-content:space-between;align-items:end;gap:20px}
 .hero p{font-size:16px;line-height:1.5;max-width:365px;margin:0}
-.hero-foot>div{display:flex;align-items:end;gap:35px;max-width:620px}
 .hero-actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
 .primary-cta{display:inline-flex;align-items:center;gap:21px;background:linear-gradient(135deg,#171716 0%,#1e3a6e 100%);color:var(--paper);text-decoration:none;padding:13px 15px;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.8px;transition:transform .24s,background .24s,box-shadow .24s;box-shadow:0 4px 18px rgba(23,23,22,.22)}
 .primary-cta:hover{background:linear-gradient(135deg,#286fdf 0%,#1a4fa8 100%);transform:translateY(-3px);box-shadow:0 8px 28px rgba(40,111,223,.32)}
@@ -68,29 +66,9 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .terminal-dot.yellow{background:#febc2e}
 .terminal-dot.green{background:#28c840}
 .terminal-bar-title{font:12px ui-monospace,monospace;color:#666;margin-left:10px;flex:1;text-align:center;letter-spacing:.3px}
-.terminal-body{padding:20px 20px 8px;color:#e8e6df;font:13px/1.7 ui-monospace,SFMono-Regular,monospace;min-height:190px}
+.terminal-body{padding:20px 20px 16px;color:#e8e6df;font:13px/1.7 ui-monospace,SFMono-Regular,monospace;min-height:190px}
 .term-prompt{color:#555;user-select:none}
 .term-cmd{color:#e8e6df}
-.term-list{margin:4px 0 0;padding:0;list-style:none}
-.term-list li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);color:#bdbbb4;cursor:pointer;transition:color .15s,padding-left .15s;display:flex;align-items:center;gap:8px;font:12px ui-monospace,monospace}
-.term-list li:last-child{border-bottom:0}
-.term-list li:hover{color:#e8e6df;padding-left:6px}
-.term-list li .term-arrow{color:#555;font-size:10px;transition:color .15s}
-.term-list li:hover .term-arrow{color:#4b8dff}
-.term-list li .term-label{flex:1}
-.term-list li.not-installed .term-label{color:#444}
-.term-list li.not-installed .term-tag-ni{font-size:9px;color:#444;letter-spacing:.4px;text-transform:uppercase;margin-left:auto}
-.fetch-tabs-wrap{padding:18px 20px 20px;border-top:1px solid rgba(255,255,255,.06)}
-.fetch-tabs-label{font:9px ui-monospace,monospace;color:#555;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
-.fetch-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.fetch-tab{flex:0 0 auto;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:transparent;color:#888;font:9px ui-monospace,monospace;letter-spacing:.4px;padding:5px 10px;cursor:pointer;transition:.18s;text-transform:uppercase}
-.fetch-tab:hover,.fetch-tab.active{background:rgba(75,141,255,.18);border-color:#4b8dff;color:#c0d6ff}
-.fetch-cmd-display{background:#111110;border-radius:8px;padding:11px 13px;font:11px ui-monospace,monospace;color:#7db3ff;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid rgba(75,141,255,.18)}
-.fetch-cmd-text{word-break:break-all;line-height:1.5}
-.fetch-copy-btn{flex-shrink:0;background:transparent;border:1px solid rgba(255,255,255,.15);color:#888;font:9px ui-monospace,monospace;padding:5px 8px;border-radius:5px;cursor:pointer;letter-spacing:.4px;text-transform:uppercase;transition:.15s;white-space:nowrap}
-.fetch-copy-btn:hover{color:#e8e6df;border-color:rgba(255,255,255,.35)}
-.terminal-card.running .terminal-dot.green{box-shadow:0 0 0 4px rgba(40,200,64,.22);animation:pulse-green 1.8s ease-in-out}
-@keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(40,200,64,.5)}70%{box-shadow:0 0 0 8px rgba(40,200,64,0)}100%{box-shadow:0 0 0 0 rgba(40,200,64,0)}}
 .intro{padding:8vw 4vw 5vw;border-bottom:1px solid var(--line)}
 .intro h1,.contact h1{font:clamp(70px,12vw,170px)/.78 Georgia,serif;letter-spacing:-.09em;font-weight:400;margin:18px 0 0}
 .list-head{padding:22px 4vw;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
@@ -117,7 +95,6 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .description{font-size:14px;line-height:1.5;max-width:320px}
 .go{font:30px Georgia,serif;text-align:right}
 .model-open,.read-article{display:none}
-.model-row:hover .model-open,.model-row:focus-visible .model-open{display:block;color:#174eae}
 .detail{padding:5vw 4vw 9vw;min-height:70vh}
 .back{background:0;border:0;padding:0;cursor:pointer;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px}
 .detail h1{font:clamp(68px,11vw,155px)/.78 Georgia,serif;letter-spacing:-.09em;font-weight:400;margin:10vw 0 55px}
@@ -126,13 +103,6 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .fact:hover{transform:translateX(8px);background:var(--glass);backdrop-filter:blur(10px)}
 .fact-label{font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px}
 .fact-value{font-size:16px;line-height:1.55}
-.fact-value table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
-.fact-value table th{text-align:left;font:10px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.8px;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);color:var(--muted)}
-.fact-value table td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4}
-.fact-value table tr:last-child td{border-bottom:0}
-.fact-value table .bench-score{font-family:ui-monospace,monospace;font-size:13px;color:#246de6;font-weight:600}
-.fact-value table .bench-note{font-size:11px;color:var(--muted);display:block;margin-top:2px}
-.bench-section-head{font:10px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:14px 0 4px;display:block}
 .news-row{will-change:transform;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:28px 4vw;text-align:left;cursor:pointer;display:grid;align-items:center;gap:20px;transition:background .2s,transform .2s;grid-template-columns:16% 1fr 35px;appearance:none;color:inherit;font-family:inherit}
 .news-row h2{font:clamp(29px,4vw,55px)/1 Georgia,serif;letter-spacing:-.06em;font-weight:400;margin:0}
 .news-row p{grid-column:2;margin:0;line-height:1.55;max-width:650px}
@@ -145,16 +115,11 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .article-dek{font:clamp(19px,2.3vw,29px)/1.35 Georgia,serif;letter-spacing:-.025em;max-width:730px;margin:46px 0 55px}
 .article-body{max-width:650px;margin-left:31%;padding-bottom:3px}
 .article-body p{font-size:17px;line-height:1.75;margin:0 0 25px}
-.article-body p:first-child:first-letter{float:left;font:66px/.75 Georgia,serif;letter-spacing:-.08em;padding:8px 9px 0 0;color:#286fdf}
-.article-end{display:flex;justify-content:space-between;align-items:center;gap:18px;max-width:650px;margin:70px 0 0 31%;padding-top:20px;border-top:1px solid var(--line);padding-bottom:2px}
-.article-end a{font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.7px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:5px;transition:opacity .2s}
-.article-end a:hover{opacity:.55}
 .contact{position:relative;overflow:hidden;padding:10vw 4vw;min-height:65vh}
 .contact:after{content:'';position:absolute;width:350px;height:350px;border-radius:50%;right:8%;top:11%;background:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.9);box-shadow:inset 15px 15px 40px rgba(255,255,255,.76),0 18px 45px rgba(32,31,26,.08);backdrop-filter:blur(18px);animation:float 12s ease-in-out infinite;pointer-events:none}
 @keyframes float{50%{transform:translate(-35px,55px) scale(1.08)}}
 .contact>*{position:relative;z-index:1}
 .contact h1{max-width:850px;margin:20px 0 50px}
-.contact-note{font-size:15px;line-height:1.6;max-width:400px;margin:-20px 0 33px}
 .email{font-size:clamp(19px,3vw,34px);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:5px}
 .research-grid{padding:0 4vw 8vw;display:grid;grid-template-columns:repeat(2,1fr);gap:0}
 .research-grid article{min-height:265px;padding:31px 8% 30px 0;border-bottom:1px solid var(--line)}
@@ -181,28 +146,22 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
 .skip-link{position:fixed;left:12px;top:-60px;z-index:100;color:var(--paper);background:var(--ink);padding:11px 14px;text-decoration:none;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.7px;transition:top .2s}
 .skip-link:focus{top:12px}
 :focus-visible{outline:2px solid #246de6;outline-offset:4px;border-radius:5px}
-.model-row:focus-visible{outline-offset:-4px}
 #cursor{position:fixed;top:-12px;left:-12px;width:24px;height:24px;border:1px solid rgba(23,23,22,.6);border-radius:50%;pointer-events:none;z-index:99;transition:width .2s,height .2s,background .2s;mix-blend-mode:multiply}
 #cursor.hover{width:42px;height:42px;background:rgba(75,141,255,.20)}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-@media(hover:none){.model-row:hover{transform:none;box-shadow:none}}
 @media(max-width:680px){
   #cursor{display:none}
-  header{top:12px;width:calc(100vw - 28px);margin-bottom:-58px;padding:0 16px;height:58px}
-  nav{display:none;position:absolute;top:64px;right:0;left:0;background:rgba(250,250,247,.82);padding:18px 20px;border:1px solid rgba(255,255,255,.9);border-radius:18px;backdrop-filter:blur(22px);box-shadow:var(--shadow);z-index:2;flex-direction:column}
+  header{top:12px;width:calc(100vw - 28px);padding:0 16px;height:58px}
+  nav{display:none;position:absolute;top:64px;right:0;left:0;background:rgba(250,250,247,.82);padding:18px 20px;border:1px solid rgba(255,255,255,.9);border-radius:18px;flex-direction:column}
   nav.open{display:flex}
   .nav-toggle{display:block}
-  .hero{padding-top:84px;min-height:650px}
-  .hero h1{font-size:72px}
   .local{grid-template-columns:1fr;padding:70px 20px;gap:45px}
   .terminal-card{transform:none;justify-self:stretch}
   .model-row,.news-row{padding:24px 20px;grid-template-columns:1fr 30px}
   .research-grid{grid-template-columns:1fr;padding:0 20px 65px}
   .research-grid article,.research-grid article:nth-child(odd),.research-grid article:nth-child(even){border-right:0;padding:28px 0;min-height:0}
   .intro{padding:65px 20px 40px}
-  .contact{padding-left:20px;padding-right:20px}
   .hf-card{margin:45px 20px;padding:28px 22px;display:block}
-  .status-legend{gap:10px;padding:12px 20px}
+  .article-body{margin-left:0}
 }
 #home:focus{outline:none}
 </style>
@@ -228,23 +187,14 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
       <span class="status">Building now — 2026</span>
     </div>
     <h1>Intelligence,<br><span class="accent">made</span> closer.</h1>
-    <div class="hero-foot">
-      <div>
-        <p>Capable language models that keep powerful intelligence in your hands—not somewhere else.</p>
-        <div class="hero-actions">
-          <a class="primary-cta" href="#models">Explore models <b>→</b></a>
-          <a class="arrowlink" href="#local">Built for local inference ↓</a>
-        </div>
+    <div class="hero-foot"><div>
+      <p>Capable language models that keep powerful intelligence in your hands—not somewhere else.</p>
+      <div class="hero-actions">
+        <a class="primary-cta" href="#models">Explore models <b>→</b></a>
+        <a class="arrowlink" href="#apps">Apps ↓</a>
       </div>
-    </div>
+    </div></div>
   </div>
-  <section class="local" id="local" aria-label="Local inference">
-    <div class="local-copy">
-      <span class="mono">03 / Local by design</span>
-      <h2 class="serif">Your model.<br><i>Your machine.</i></h2>
-      <p>NexLM models are built for on-device inference: private, responsive, and available without a round trip to the cloud.</p>
-    </div>
-  </section>
 </main>
 <section class="page" id="models" tabindex="-1" aria-label="Models">
   <div class="intro"><span class="mono">NexLM / Model index</span><h1>Models</h1><p class="models-lede">A focused family of models for reasoning, local deployment, code, and specialized work.</p></div>
@@ -271,9 +221,62 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
 <section class="page" id="apps" tabindex="-1" aria-label="Apps">
   <div class="intro"><span class="mono">NexLM / Apps</span><h1>Apps</h1><p class="models-lede">Tools for running and working with NexLM systems on your machine.</p></div>
   <div class="research-grid">
-    <article><span class="mono">01 / CLI</span><h2 class="serif">NexCLI</h2><p>A coding agent command line interface for the NexLM family of language models.</p><a class="text-cta" href="https://github.com/besmart12349/NexCLI" target="_blank" rel="noopener noreferrer">GitHub <b>↗</b></a></article>
-    <article><span class="mono">02 / Harness</span><h2 class="serif">NexLM Harness</h2><p>NexLM Harness 1.1.2. Intelligence, made closer. A local harness for running and working with NexLM models on your hardware.</p></article>
+    <article><span class="mono">01 / CLI</span><h2 class="serif">NexCLI</h2><p>A coding agent command line interface for the NexLM family of language models.</p></article>
+    <article><span class="mono">02 / Harness</span><h2 class="serif">NexLM Harness</h2><p>NexLM Harness 1.1.2. Intelligence, made closer. A local harness for running and working with NexLM models on your hardware.</p><a class="text-cta" href="#harness">View harness <b>→</b></a></article>
   </div>
+</section>
+<section class="page" id="harness" tabindex="-1" aria-label="NexLM Harness">
+  <div class="intro">
+    <span class="mono">NexLM / Apps / Harness</span>
+    <h1>Harness</h1>
+    <p class="models-lede">NexLM Harness 1.1.2. Intelligence, made closer. The local workspace for loading, prompting, and iterating on NexLM models on your own hardware.</p>
+  </div>
+  <section class="local" aria-label="Harness overview">
+    <div class="local-copy">
+      <span class="mono">01 / Local interface</span>
+      <h2 class="serif">Your models.<br><i>Your session.</i></h2>
+      <p>Harness sits next to the model. It is built for private, on-device work: install locally, launch a web session, and keep prompts on the machine in front of you.</p>
+      <ol class="local-steps">
+        <li><b>01</b><span>Clone NexLM-Harness and install with pnpm.</span></li>
+        <li><b>02</b><span>Build, then launch the local web session.</span></li>
+        <li><b>03</b><span>Run NexLM models without a cloud round trip.</span></li>
+      </ol>
+    </div>
+    <div class="terminal-card" aria-label="Harness commands">
+      <div class="terminal-bar">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-bar-title">nexlm — harness 1.1.2</span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="term-prompt">$ </span><span class="term-cmd">cd NexLM-Harness</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">git checkout master</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">git pull origin master</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">pnpm install</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">pnpm run build</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">pnpm dsh web</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="detail">
+    <button class="back" id="back-to-apps">← All apps</button>
+    <div class="facts">
+      <div class="fact"><div class="fact-label">Product</div><div class="fact-value">NexLM Harness 1.1.2</div></div>
+      <div class="fact"><div class="fact-label">Tagline</div><div class="fact-value">NexLM Harness — Intelligence, made closer</div></div>
+      <div class="fact"><div class="fact-label">Role</div><div class="fact-value">Local workspace for the NexLM family of models</div></div>
+      <div class="fact"><div class="fact-label">Runtime</div><div class="fact-value">pnpm install · pnpm run build · pnpm dsh web</div></div>
+      <div class="fact"><div class="fact-label">Privacy</div><div class="fact-value">Designed for on-device sessions. Prompts stay on your hardware.</div></div>
+    </div>
+  </div>
+  <aside class="hf-card">
+    <div>
+      <span class="mono">NexLM / Harness</span>
+      <h2 class="serif">Source,<br><i>on GitHub.</i></h2>
+      <p>NexLM Harness 1.1.2 lives in the NexLM-Harness repository.</p>
+    </div>
+    <a href="https://github.com/besmart12349/NexLM-Harness" target="_blank" rel="noopener noreferrer">View on GitHub <b>↗</b></a>
+  </aside>
 </section>
 <section class="page" id="news" tabindex="-1" aria-label="News">
   <div class="intro"><span class="mono">NexLM / Dispatches</span><h1>News</h1><p class="news-lede">Product milestones, research progress, and notes from a company building intelligence for the device in front of you.</p></div>
@@ -340,7 +343,6 @@ const news=[
 function go(id){location.hash=id;document.querySelector('nav').classList.remove('open');document.getElementById('nav-toggle').setAttribute('aria-expanded','false')}
 function route(){
   let id=location.hash.slice(1)||'home';
-  if(id==='local')id='home';
   if(!document.getElementById(id))id='home';
   if(id==='detail'&&sessionStorage.getItem('nexlmModel')===null)id='models';
   if(id==='article'&&sessionStorage.getItem('nexlmArticle')===null)id='news';
@@ -355,16 +357,16 @@ function route(){
     }
   }
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  const page=document.getElementById(id);
-  page.classList.add('active');
-  document.querySelectorAll('[data-nav]').forEach(b=>b.setAttribute('aria-current',b.dataset.nav===id?'page':'false'));
-  const titles={home:'NexLM — Local AI Models',models:'NexLM — Models',apps:'NexLM — Apps',news:'NexLM — News',research:'NexLM — Research',contact:'NexLM — Contact',detail:'NexLM — Model',article:'NexLM — Dispatch'};
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('[data-nav]').forEach(b=>b.setAttribute('aria-current',(b.dataset.nav===id||(id==='harness'&&b.dataset.nav==='apps'))?'page':'false'));
+  const titles={home:'NexLM — Local AI Models',models:'NexLM — Models',apps:'NexLM — Apps',harness:'NexLM — Harness',news:'NexLM — News',research:'NexLM — Research',contact:'NexLM — Contact',detail:'NexLM — Model',article:'NexLM — Dispatch'};
   document.title=titles[id]||'NexLM';
 }
 document.querySelectorAll('[data-nav]').forEach(btn=>btn.addEventListener('click',()=>go(btn.dataset.nav)));
 document.getElementById('nav-toggle').addEventListener('click',()=>{const nav=document.querySelector('nav');const open=nav.classList.toggle('open');document.getElementById('nav-toggle').setAttribute('aria-expanded',open?'true':'false')});
 document.getElementById('back-to-news').addEventListener('click',()=>{sessionStorage.removeItem('nexlmArticle');go('news')});
 document.getElementById('back-to-models').addEventListener('click',()=>{sessionStorage.removeItem('nexlmModel');go('models')});
+document.getElementById('back-to-apps').addEventListener('click',()=>go('apps'));
 function renderModels(filter='all'){
   document.getElementById('model-list').innerHTML=models.map((m,i)=>({m,i})).filter(x=>filter==='all'||x.m.group===filter).map(({m,i})=>'<button class="model-row" data-model-index="'+i+'"><span class="model-name">'+m.name+'</span><span class="tag">'+m.tag+'</span><span class="description">'+m.desc+'</span><span class="status-badge '+m.statusBadge+'"><span class="dot"></span>'+m.statusLabel+'</span><span class="go" aria-hidden="true">↗</span></button>').join('');
   document.querySelectorAll('.model-row').forEach(row=>row.addEventListener('click',()=>openModel(Number(row.dataset.modelIndex))));
