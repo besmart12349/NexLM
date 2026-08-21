@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +22,6 @@ html{scroll-behavior:smooth}
 body{margin:0;background:linear-gradient(145deg,#faf9f5 0%,#f2f1eb 100%);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 .serif{font-family:Georgia,'Times New Roman',serif}
 button,a{color:inherit}
-
-/* Header */
 header{height:70px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;position:sticky;top:18px;z-index:10;width:min(92vw,920px);margin:0 auto -58px;border:1px solid rgba(255,255,255,.9);border-radius:999px;background:rgba(250,250,247,.52);box-shadow:0 8px 28px rgba(33,32,27,.10),inset 0 1px 1px rgba(255,255,255,.92);backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%)}
 .logo{font-size:22px;font-weight:800;letter-spacing:-2px;text-decoration:none}
 .logo small{font-size:9px;letter-spacing:0;margin-left:1px}
@@ -33,13 +30,9 @@ nav button,.nav-toggle{background:0;border:0;padding:8px 0;cursor:pointer;font:1
 nav button:hover{opacity:.55;transform:translateY(-1px)}
 nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5px solid var(--ink);padding-bottom:6px}
 .nav-toggle{display:none}
-
-/* Pages */
 .page{display:none}
 .page.active{display:block;animation:pageIn .7s cubic-bezier(.16,1,.3,1) both}
 @keyframes pageIn{from{opacity:0;transform:translateY(16px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
-
-/* Hero */
 .hero{padding:88px 4vw 30px;min-height:calc(100vh - 70px);display:flex;flex-direction:column;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 .hero:after{content:'';position:absolute;width:42vw;height:42vw;border-radius:50%;right:-15vw;bottom:-25vw;background:conic-gradient(from 200deg,rgba(75,141,255,.18),rgba(255,255,255,.55),rgba(75,141,255,.10),rgba(255,255,255,.6));border:1px solid rgba(255,255,255,.8);box-shadow:inset 10px 10px 30px rgba(255,255,255,.7),var(--shadow);backdrop-filter:blur(14px);animation:orb 13s ease-in-out infinite;pointer-events:none}
 @keyframes orb{50%{transform:translate(-45px,-25px) scale(1.1)}}
@@ -59,8 +52,6 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .primary-cta b{font-size:17px;font-weight:400}
 .arrowlink{text-decoration:none;font:11px ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:7px;transition:opacity .2s}
 .arrowlink:hover{opacity:.55}
-
-/* Local section */
 .local{display:grid;grid-template-columns:1fr 1fr;gap:7vw;padding:9vw 4vw;border-bottom:1px solid var(--line);position:relative;overflow:hidden;scroll-margin-top:92px}
 .local-copy,.terminal-card{position:relative;z-index:1}
 .local h2{font-size:clamp(48px,6vw,88px);line-height:.88;letter-spacing:-.07em;font-weight:400;margin:22px 0 30px}
@@ -69,8 +60,6 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .local-steps{list-style:none;padding:0;margin:38px 0 0;border-top:1px solid var(--line)}
 .local-steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
 .local-steps b{font:10px ui-monospace,monospace;color:#246de6}
-
-/* Terminal */
 .terminal-card{align-self:center;justify-self:end;border-radius:16px;overflow:hidden;background:#1a1a18;box-shadow:0 28px 60px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.07);transform:rotate(1.3deg);transition:transform .35s;max-width:480px;width:100%}
 .terminal-card:hover{transform:rotate(0) translateY(-7px)}
 .terminal-bar{height:44px;background:#252522;display:flex;align-items:center;gap:7px;padding:0 16px;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -102,15 +91,9 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .fetch-copy-btn:hover{color:#e8e6df;border-color:rgba(255,255,255,.35)}
 .terminal-card.running .terminal-dot.green{box-shadow:0 0 0 4px rgba(40,200,64,.22);animation:pulse-green 1.8s ease-in-out}
 @keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(40,200,64,.5)}70%{box-shadow:0 0 0 8px rgba(40,200,64,0)}100%{box-shadow:0 0 0 0 rgba(40,200,64,0)}}
-
-/* Intro shared */
 .intro{padding:8vw 4vw 5vw;border-bottom:1px solid var(--line)}
 .intro h1,.contact h1{font:clamp(70px,12vw,170px)/.78 Georgia,serif;letter-spacing:-.09em;font-weight:400;margin:18px 0 0}
-
-/* Model list */
 .list-head{padding:22px 4vw;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
-
-/* Status badge */
 .status-badge{display:inline-flex;align-items:center;gap:5px;font:9px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.7px;padding:4px 8px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
 .status-badge .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .status-badge.released{background:rgba(40,200,64,.10);border-color:rgba(40,200,64,.30);color:#1a7a30}
@@ -121,11 +104,12 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .status-badge.indev .dot{background:#4b8dff}
 .status-badge.gated{background:rgba(255,60,60,.10);border-color:rgba(255,60,60,.30);color:#7a1a1a}
 .status-badge.gated .dot{background:#ff3c3c}
-
-/* Status legend */
+.status-badge.imminent{background:rgba(23,23,22,.08);border-color:rgba(23,23,22,.40);color:#171716}
+.status-badge.imminent .dot{background:#171716}
+.status-badge.planned{background:rgba(102,100,94,.08);border-color:rgba(102,100,94,.28);color:#66645e}
+.status-badge.planned .dot{background:#9a978e}
 .status-legend{padding:14px 4vw;display:flex;gap:18px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line);background:rgba(255,255,255,.18)}
 .legend-label{font:9px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-right:4px}
-
 .model-row{will-change:transform;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:28px 4vw;text-align:left;cursor:pointer;display:grid;align-items:center;gap:20px;transition:background .2s,transform .2s,box-shadow .2s;grid-template-columns:28% 16% 1fr 120px 35px;position:relative;appearance:none;color:inherit;font-family:inherit}
 .model-row:hover{transform:scale(1.005);box-shadow:0 4px 32px rgba(23,23,22,.08),0 1px 0 rgba(255,255,255,.9);z-index:1;background:rgba(255,255,255,.55);backdrop-filter:blur(14px)}
 .model-name{font:clamp(31px,4.5vw,63px)/1 Georgia,serif;letter-spacing:-.06em}
@@ -134,8 +118,6 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .go{font:30px Georgia,serif;text-align:right}
 .model-open,.read-article{display:none}
 .model-row:hover .model-open,.model-row:focus-visible .model-open{display:block;color:#174eae}
-
-/* Detail */
 .detail{padding:5vw 4vw 9vw;min-height:70vh}
 .back{background:0;border:0;padding:0;cursor:pointer;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px}
 .detail h1{font:clamp(68px,11vw,155px)/.78 Georgia,serif;letter-spacing:-.09em;font-weight:400;margin:10vw 0 55px}
@@ -151,16 +133,12 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .fact-value table .bench-score{font-family:ui-monospace,monospace;font-size:13px;color:#246de6;font-weight:600}
 .fact-value table .bench-note{font-size:11px;color:var(--muted);display:block;margin-top:2px}
 .bench-section-head{font:10px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:14px 0 4px;display:block}
-
-/* News */
 .news-row{will-change:transform;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:28px 4vw;text-align:left;cursor:pointer;display:grid;align-items:center;gap:20px;transition:background .2s,transform .2s;grid-template-columns:16% 1fr 35px;appearance:none;color:inherit;font-family:inherit}
 .news-row h2{font:clamp(29px,4vw,55px)/1 Georgia,serif;letter-spacing:-.06em;font-weight:400;margin:0}
 .news-row p{grid-column:2;margin:0;line-height:1.55;max-width:650px}
 .news-row:hover,.news-row:focus-visible{background:rgba(75,141,255,.09);transform:translateX(5px)}
 .news-row:hover .read-article,.news-row:focus-visible .read-article{display:block;color:#174eae}
 .news-lede{max-width:520px;line-height:1.65;margin:42px 0 0;font-size:16px}
-
-/* Article */
 .article{padding:5vw 4vw 10vw;max-width:1080px}
 .article-meta{margin:9vw 0 25px;color:var(--muted)}
 .article h1{font:clamp(51px,8.2vw,120px)/.86 Georgia,serif;letter-spacing:-.08em;font-weight:400;margin:0;max-width:1050px}
@@ -171,8 +149,6 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .article-end{display:flex;justify-content:space-between;align-items:center;gap:18px;max-width:650px;margin:70px 0 0 31%;padding-top:20px;border-top:1px solid var(--line);padding-bottom:2px}
 .article-end a{font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.7px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:5px;transition:opacity .2s}
 .article-end a:hover{opacity:.55}
-
-/* Contact */
 .contact{position:relative;overflow:hidden;padding:10vw 4vw;min-height:65vh}
 .contact:after{content:'';position:absolute;width:350px;height:350px;border-radius:50%;right:8%;top:11%;background:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.9);box-shadow:inset 15px 15px 40px rgba(255,255,255,.76),0 18px 45px rgba(32,31,26,.08);backdrop-filter:blur(18px);animation:float 12s ease-in-out infinite;pointer-events:none}
 @keyframes float{50%{transform:translate(-35px,55px) scale(1.08)}}
@@ -180,16 +156,12 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .contact h1{max-width:850px;margin:20px 0 50px}
 .contact-note{font-size:15px;line-height:1.6;max-width:400px;margin:-20px 0 33px}
 .email{font-size:clamp(19px,3vw,34px);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:5px}
-
-/* Research */
 .research-grid{padding:0 4vw 8vw;display:grid;grid-template-columns:repeat(2,1fr);gap:0}
 .research-grid article{min-height:265px;padding:31px 8% 30px 0;border-bottom:1px solid var(--line)}
 .research-grid article:nth-child(odd){border-right:1px solid var(--line);padding-right:10%}
 .research-grid article:nth-child(even){padding-left:10%}
 .research-grid h2{font-weight:400;font-size:clamp(30px,4vw,50px);letter-spacing:-.06em;margin:38px 0 14px}
 .research-grid p{font-size:14px;line-height:1.6;color:#3f3e39;max-width:315px}
-
-/* Depth / home sections */
 .home-depth{border-bottom:1px solid var(--line);padding:8vw 4vw}
 .depth-kicker{padding-bottom:28px;border-bottom:1px solid var(--line)}
 .depth-main{display:grid;grid-template-columns:1.15fr .85fr;gap:7vw;padding:7vw 0}
@@ -201,8 +173,6 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .principles article:last-child{border-right:0}
 .principles h3{font-size:29px;letter-spacing:-.05em;font-weight:400;margin:35px 0 13px}
 .principles p{font-size:14px;line-height:1.6;color:#3f3e39;max-width:315px}
-
-/* Release strip & use cases */
 .release-strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);background:rgba(255,255,255,.24)}
 .release-strip div{padding:25px 4vw;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
 .release-strip div:last-child{border:0}
@@ -218,13 +188,9 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .use-grid p{max-width:305px;font-size:14px;line-height:1.62}
 .text-cta{display:inline-flex;gap:20px;margin-top:45px;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;text-decoration:none;border-bottom:1px solid var(--ink);padding:0 0 8px}
 .text-cta b{font-size:17px;line-height:10px}
-
-/* Filter bar */
 .filterbar{padding:16px 4vw;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
 .filter{border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:rgba(255,255,255,.28);cursor:pointer;font:10px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.7px;transition:.2s}
 .filter:hover,.filter.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-
-/* HF card */
 .hf-nav{font:11px ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase;text-decoration:none;padding:8px 0;white-space:nowrap;transition:opacity .2s}
 .hf-nav:hover,.hf-footer:hover{opacity:.55}
 .hf-footer{color:inherit;text-decoration:none}
@@ -234,39 +200,19 @@ nav button[aria-current="page"]{opacity:1;pointer-events:none;border-bottom:1.5p
 .hf-card>a{flex:0 0 auto;background:var(--ink);color:var(--paper);text-decoration:none;padding:14px 16px;font:11px ui-monospace,monospace;letter-spacing:.7px;text-transform:uppercase;transition:transform .2s,background .2s}
 .hf-card>a:hover{background:#286fdf;transform:translateY(-3px)}
 .hf-card b{font-size:17px;font-weight:400;margin-left:15px}
-
-/* Models lede */
 .models-lede{max-width:540px;font-size:16px;line-height:1.65;margin:40px 0 0}
-
-/* Reveal animation */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:none}
-
-/* content-visibility */
 .home-depth,.release-strip,.use-cases{content-visibility:auto;contain-intrinsic-size:700px}
-
-/* Footer */
 footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-content:space-between;font:11px ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase}
-
-/* Skip link */
 .skip-link{position:fixed;left:12px;top:-60px;z-index:100;color:var(--paper);background:var(--ink);padding:11px 14px;text-decoration:none;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.7px;transition:top .2s}
 .skip-link:focus{top:12px}
-
-/* Focus styles */
 :focus-visible{outline:2px solid #246de6;outline-offset:4px;border-radius:5px}
 .model-row:focus-visible{outline-offset:-4px}
-
-/* Custom cursor */
 #cursor{position:fixed;top:-12px;left:-12px;width:24px;height:24px;border:1px solid rgba(23,23,22,.6);border-radius:50%;pointer-events:none;z-index:99;transition:width .2s,height .2s,background .2s;mix-blend-mode:multiply}
 #cursor.hover{width:42px;height:42px;background:rgba(75,141,255,.20)}
-
-/* Reduced motion */
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-
-/* No-hover devices */
 @media(hover:none){.model-row:hover{transform:none;box-shadow:none}}
-
-/* Mobile */
 @media(max-width:680px){
   #cursor{display:none}
   .hero:after{width:70vw;height:70vw}
@@ -343,7 +289,6 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
   .hf-nav{display:none}
   .hero h1{font-size:60px;letter-spacing:-.10em}
 }
-/* home focus */
 #home:focus{outline:none}
 </style>
 </head>
@@ -361,7 +306,6 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <a class="hf-nav" href="https://huggingface.co/NexLM" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a>
   </nav>
 </header>
-
 <main id="home" class="page active" tabindex="-1" aria-label="Home">
   <div class="hero">
     <div class="topline mono">
@@ -424,20 +368,21 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     </div>
   </section>
 </main>
-
 <section class="page" id="models" tabindex="-1" aria-label="Models">
   <div class="intro">
     <span class="mono">NexLM / Model index</span>
     <h1>Models</h1>
     <p class="models-lede">A focused family of models for reasoning, local deployment, code, and specialized work. Select a system to view its current direction.</p>
   </div>
-  <div class="list-head mono"><span>Six systems, one direction</span><span>01—06</span></div>
+  <div class="list-head mono"><span>Ten systems, one direction</span><span>01—10</span></div>
   <div class="status-legend" role="note" aria-label="Model status legend">
     <span class="legend-label">Status</span>
     <span class="status-badge released"><span class="dot"></span>Released</span>
     <span class="status-badge eval"><span class="dot"></span>Finishing eval</span>
     <span class="status-badge indev"><span class="dot"></span>In development</span>
     <span class="status-badge gated"><span class="dot"></span>Security / approval gated</span>
+    <span class="status-badge imminent"><span class="dot"></span>Release imminent</span>
+    <span class="status-badge planned"><span class="dot"></span>Planned</span>
   </div>
   <div class="filterbar" role="group" aria-label="Filter models">
     <button class="filter active" data-filter="all" aria-pressed="true">All</button>
@@ -445,6 +390,7 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <button class="filter" data-filter="Reasoning" aria-pressed="false">Reasoning</button>
     <button class="filter" data-filter="Coding" aria-pressed="false">Coding</button>
     <button class="filter" data-filter="Preview" aria-pressed="false">Preview</button>
+    <button class="filter" data-filter="Future" aria-pressed="false">Future</button>
   </div>
   <div id="model-list"></div>
   <aside class="hf-card">
@@ -456,7 +402,6 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <a href="https://huggingface.co/NexLM" target="_blank" rel="noopener noreferrer">Visit NexLM on Hugging Face <b>↗</b></a>
   </aside>
 </section>
-
 <section class="page" id="news" tabindex="-1" aria-label="News">
   <div class="intro">
     <span class="mono">NexLM / Dispatches</span>
@@ -468,7 +413,6 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <div id="news-list"></div>
   </div>
 </section>
-
 <section class="page" id="article" tabindex="-1" aria-label="Article">
   <article class="article">
     <button class="back" id="back-to-news">← All news</button>
@@ -482,7 +426,6 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     </div>
   </article>
 </section>
-
 <section class="page" id="research" tabindex="-1" aria-label="Research">
   <div class="intro">
     <span class="mono">NexLM / Research</span>
@@ -496,7 +439,6 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <article><span class="mono">04 / Deployment</span><h2 class="serif">Inference that travels</h2><p>Our deployment work considers MLX, GGUF, Ollama, and llama.cpp so models can operate across developer and edge environments.</p></article>
   </div>
 </section>
-
 <section class="page" id="contact" tabindex="-1" aria-label="Contact">
   <div class="contact">
     <span class="mono">NexLM / Contact</span>
@@ -505,7 +447,6 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <a class="email" href="mailto:nexlm@icloud.com">nexlm@icloud.com ↗</a>
   </div>
 </section>
-
 <section class="page" id="detail" tabindex="-1" aria-label="Model detail">
   <div class="detail">
     <button class="back" id="back-to-models">← All models</button>
@@ -513,15 +454,12 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <div class="facts" id="facts"></div>
   </div>
 </section>
-
 <footer>
   <span>© 2026 NexLM AI</span>
   <a class="hf-footer" href="https://huggingface.co/NexLM" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a>
   <span>Made with intent</span>
 </footer>
-
 <div id="cursor" aria-hidden="true"></div>
-
 <script>
 const grm3BenchmarkHTML = `
 <span class="bench-section-head">Language — Non-Thinking Mode</span>
@@ -565,53 +503,17 @@ const grm3BenchmarkHTML = `
 <tr><td>TAU2-Bench</td><td class="bench-score">11.6</td><td>Conversational agent benchmark</td></tr>
 <tr><td>LongBench v2</td><td class="bench-score">26.1</td><td>Long-context document understanding</td></tr>
 </tbody></table>`;
-
 const models=[
-  {name:'GRM-3 Nano',group:'Reasoning',tag:'Reasoning · Multimodal · Sub-1B',statusBadge:'eval',statusLabel:'Finishing eval',desc:'Sub-1B parameter model optimized for complex and deep reasoning with native multimodal support.',facts:[
-    ['Category','Reasoning · Multimodal'],
-    ['Parameters','Sub-1B — under one billion parameters, optimized for edge and on-device deployment'],
-    ['Status','Pretraining complete'],
-    ['Architecture','Hybrid Gated DeltaNet + Attention · 24-layer dense architecture · 262,144-token native context window'],
-    ['Multimodal','Natively multimodal. Supports text, image, and video inputs through a unified vision-language architecture. Image uploads are fully supported — submit a photo, diagram, screenshot, or document and GRM-3 Nano will reason over its contents alongside your prompt.'],
-    ['Thinking Mode','Full thinking / chain-of-thought mode supported. Activating deep reasoning unlocks measurably stronger performance across knowledge, STEM, instruction following, and visual tasks — benchmarked and reflected in the scores below.'],
-    ['Description','GRM-3 Nano is NexLM\'s first public model and the flagship of the sub-1B class. It is purpose-built for complex and deep reasoning in constrained deployment environments — phone-class hardware, embedded systems, edge devices, and CPU-only machines. Unlike most small models that sacrifice capability for size, GRM-3 Nano is engineered around a single premise: useful intelligence does not require a data center.\n\nThe architecture is a hybrid Gated DeltaNet and Gated Attention design — a 3:1 ratio of linear-attention layers to standard attention — enabling constant-memory inference across its full 262K-token context window. This means GRM-3 Nano can process long documents, extended conversations, and multi-page inputs without memory pressure on edge hardware.\n\nVision is built in from the ground up, not bolted on. GRM-3 Nano processes images and video through the same weights and training pipeline as its language capability. Submit a screenshot, a diagram, a chart, or a photograph and the model reasons over it natively — no external vision module, no API call.\n\nThinking mode unlocks a second performance tier. When deep reasoning is enabled, GRM-3 Nano engages chain-of-thought processing, producing measurably higher benchmark scores across STEM, instruction following, and visual understanding. This is the mode optimized for tasks that require more than a fast lookup — mathematical reasoning, structured analysis, multi-step problem solving.\n\nDeployment targets include Ollama, MLX, GGUF (llama.cpp), and standard HuggingFace Transformers. The model runs at approximately 1.6GB VRAM at BF16 precision and under 0.5GB at 4-bit quantization.'],
-    ['Benchmarks',grm3BenchmarkHTML],
-    ['Runtimes','Ollama · MLX · GGUF · llama.cpp · HuggingFace Transformers'],
-    ['VRAM (BF16)','~1.6 GB'],
-    ['VRAM (4-bit)','~0.5 GB — runs on phones, Raspberry Pi, and CPU-only systems'],
-    ['Context Window','262,144 tokens (native)'],
-    ['Languages','201 languages supported'],
-    ['License','Apache 2.0']
-  ]},
-  {name:'GRM-4 Edge',group:'Foundation',tag:'5B A1B / 9B A2B',statusBadge:'indev',statusLabel:'In development',desc:'Edge-focused architecture in two performance profiles.',facts:[['Configurations','5B A1B · 9B A2B'],['Status','Architecture and first steps complete'],['Brief','An edge-focused GRM-4 architecture engineered in two distinct performance profiles.']]},
-  {name:'GRM-4 Core',group:'Foundation',tag:'Foundation',statusBadge:'indev',statusLabel:'In development',desc:'The general-purpose foundation of the GRM-4 family.',facts:[['Category','General-purpose foundation model'],['Status','In development'],['Brief','The general-purpose center of the GRM-4 family.']]},
-  {name:'GRM-4 Code',group:'Coding',tag:'Coding',statusBadge:'indev',statusLabel:'In development',desc:'A focused model for software development workflows.',facts:[['Category','Coding'],['Status','In development'],['Brief','A GRM-4 specialization for software development workflows.']]},
-  {name:'Oden-1 Preview',group:'Preview',tag:'Cyber / Exploitation / Preview',statusBadge:'gated',statusLabel:'Security gated',desc:'A 9B-parameter cyber model fine-tuned on NexLM proprietary coding, offensive security, and exploitation datasets.',facts:[
-    ['Category','Cyber-security \u00b7 Offensive Research \u00b7 Code Intelligence'],
-    ['Architecture','9B dense transformer \u2014 fine-tuned from Qwen 3.5-9B base weights via NexLM proprietary post-training pipeline. Full-precision BF16 training with custom instruction tuning and safety-gated RLHF.'],
-    ['Parameters','9 billion parameters'],
-    ['Status','Security / approval gated \u2014 access requires NexLM vetting'],
-    ['Base Model','Qwen 3.5-9B \u2014 Oden-1 Preview surpasses its base across all evaluated security and coding benchmarks through NexLM domain-specific post-training.'],
-    ['Training Details','Oden-1 Preview was developed on NexLM\'s proprietary training pipeline built specifically for offensive security intelligence. Training data includes curated exploit databases, CVE corpora, vulnerability research papers, CTF write-ups, red-team operational playbooks, assembly and disassembly corpora, shellcode analysis datasets, and proprietary NexLM internal code intelligence collections. Post-training includes domain-specific instruction tuning, multi-turn red-team simulation, and a safety-gated RLHF stage designed to maintain responsible boundaries while preserving technical depth.'],
-    ['Specializations','Vulnerability research &amp; CVE analysis \u00b7 Exploit development &amp; PoC generation \u00b7 Reverse engineering assistance \u00b7 Penetration testing workflows \u00b7 CTF challenge solving \u00b7 Malware behavior analysis \u00b7 Binary analysis \u00b7 Network protocol exploitation \u00b7 Web application security (SQLi, XSS, SSRF, RCE) \u00b7 Social engineering scenario modeling'],
-    ['Benchmarks',`<span class="bench-section-head">Security &amp; Code Intelligence <span style="color:#4b8dff;font-size:9px;letter-spacing:.5px">(ODEN-1 PREVIEW vs QWEN 3.5-9B BASE)</span></span>
-<table><thead><tr><th>Benchmark</th><th>Oden-1 Preview</th><th>Qwen 3.5-9B Base</th><th>Description</th></tr></thead><tbody>
-<tr><td>HumanEval</td><td class="bench-score">82.4</td><td>81.1</td><td>Python code generation pass@1</td></tr>
-<tr><td>MBPP (Plus)</td><td class="bench-score">77.8</td><td>76.5</td><td>Multi-task Python programming</td></tr>
-<tr><td>CyberSecEval 2 \u2014 Autocomplete</td><td class="bench-score">71.3</td><td>68.4</td><td>Insecure code autocomplete resistance</td></tr>
-<tr><td>CyberSecEval 2 \u2014 Instruct</td><td class="bench-score">68.9</td><td>66.1</td><td>Exploit instruction generation accuracy</td></tr>
-<tr><td>CTFBench (NexLM internal)</td><td class="bench-score">61.2</td><td>58.7</td><td>NexLM internal CTF task accuracy</td></tr>
-<tr><td>MMLU-Pro (STEM)</td><td class="bench-score">53.8</td><td>52.9</td><td>Multi-task STEM knowledge</td></tr>
-<tr><td>IFEval</td><td class="bench-score">74.1</td><td>73.2</td><td>Instruction following fidelity</td></tr>
-</tbody></table>
-<span class="bench-section-head" style="margin-top:10px;display:block;font-size:9px;color:var(--muted)">Scores represent Oden-1 Preview internal evaluation. All deltas above Qwen 3.5-9B baseline are attributable to NexLM domain-specific post-training. For research validation only.</span>`],
-    ['Description','Oden-1 Preview is NexLM\'s first security-specialized language model \u2014 a 9B-parameter system built on a Qwen 3.5-9B foundation and extensively post-trained on NexLM proprietary datasets covering offensive security, vulnerability exploitation, reverse engineering, and low-level code intelligence.\n\nThe model is designed to function as a capable technical partner for security researchers, red teams, and CTF competitors. It can reason over CVE disclosures, draft proof-of-concept exploit scaffolding, walk through binary analysis steps, assist with network protocol fuzzing logic, and produce detailed security-oriented code across Python, C, C++, and assembly.\n\nOden-1 Preview is intentionally gated. Access requires NexLM review because the model\'s capabilities carry genuine dual-use risk. The intended user base is professional security researchers, credentialed penetration testers, and vetted academic environments \u2014 not general-purpose deployment. This is a Preview release: capabilities, benchmarks, and safety layers are under active refinement before any broader distribution.\n\nThe NexLM proprietary training pipeline used for Oden-1 includes a multi-stage safety-gating process that distinguishes between legitimate offensive-security research use and harmful misuse. The model is not a general-purpose chatbot and is not offered through the standard NexLM endpoint without approval.'],
-    ['Access','Security and approval gated \u2014 contact nexlm@icloud.com for research access'],
-    ['Context Window','32,768 tokens'],
-    ['Runtimes','Internal NexLM inference endpoint only \u2014 not available on public Ollama/GGUF registries pending approval gate'],
-    ['License','Proprietary \u2014 NexLM Research License (gated)']
-  ]},
-  {name:'CoPilot-1 Preview',group:'Preview',tag:'Aviation / Preview',statusBadge:'gated',statusLabel:'Approval gated',desc:'An always-on aviation LLM, made with AeroAI.',facts:[['Category','Aviation'],['Built with','AeroAI'],['Status','Preview'],['Brief','An always-on aviation language model for the flying community.']]}
+  {name:'GRM-3 Nano',group:'Reasoning',tag:'Reasoning · Multimodal · Sub-1B',statusBadge:'imminent',statusLabel:'Release imminent',desc:'Sub-1B parameter model optimized for complex and deep reasoning with native multimodal support.',facts:[['Category','Reasoning · Multimodal'],['Parameters','Sub-1B — under one billion parameters, optimized for edge and on-device deployment'],['Status','Release imminent'],['Architecture','Hybrid Gated DeltaNet + Attention · 24-layer dense architecture · 262,144-token native context window'],['Multimodal','Natively multimodal. Supports text, image, and video inputs through a unified vision-language architecture.'],['Thinking Mode','Full thinking / chain-of-thought mode supported.'],['Description','GRM-3 Nano is NexLM\'s first public model and the flagship of the sub-1B class.'],['Benchmarks',grm3BenchmarkHTML],['Runtimes','Ollama · MLX · GGUF · llama.cpp · HuggingFace Transformers'],['VRAM (BF16)','~1.6 GB'],['VRAM (4-bit)','~0.5 GB'],['Context Window','262,144 tokens (native)'],['Languages','201 languages supported'],['License','Apache 2.0']]},
+  {name:'GRM-3',group:'Reasoning',tag:'Reasoning · 4B',statusBadge:'indev',statusLabel:'In development',desc:'A 4B dense GRM-3 system for stronger general reasoning while remaining practical to run locally.',facts:[['Category','Reasoning'],['Parameters','4B dense'],['Status','In development'],['Brief','The 4B follow-on to GRM-3 Nano.']]},
+  {name:'Odin-1 Cyber Preview',group:'Preview',tag:'Cyber / Exploitation / Preview',statusBadge:'gated',statusLabel:'Security / approval gated',desc:'A 9B-parameter cyber model fine-tuned on NexLM proprietary coding, offensive security, and exploitation datasets.',facts:[['Category','Cyber-security · Offensive Research · Code Intelligence'],['Parameters','9 billion parameters'],['Status','Security / approval gated — access requires NexLM vetting'],['Access','Security and approval gated — contact nexlm@icloud.com for research access'],['License','Proprietary — NexLM Research License (gated)']]},
+  {name:'Odin-3 Cyber',group:'Preview',tag:'Cyber / Security',statusBadge:'gated',statusLabel:'Security / approval gated',desc:'The next Odin cyber system, reserved for vetted security research and approval-gated access.',facts:[['Category','Cyber-security · Offensive Research'],['Status','Security / approval gated — access requires NexLM vetting'],['Access','Security and approval gated — contact nexlm@icloud.com for research access'],['License','Proprietary — NexLM Research License (gated)']]},
+  {name:'GRM-3.5 Lightning',group:'Foundation',tag:'30B A3B · MoE',statusBadge:'planned',statusLabel:'Planned',desc:'A 30B-total, 3B-active mixture-of-experts model for high capability at a lighter active compute cost.',facts:[['Category','Foundation · Mixture of Experts'],['Parameters','30B total · 3B active (30BA3B)'],['Status','Planned']]},
+  {name:'GRM-3.5-MAX',group:'Foundation',tag:'31B dense',statusBadge:'planned',statusLabel:'Planned',desc:'A 31B dense GRM-3.5 system for maximum quality in the 3.5 generation.',facts:[['Category','Foundation · Dense'],['Parameters','31B dense'],['Status','Planned']]},
+  {name:'Odin-3.1 Code',group:'Coding',tag:'Coding',statusBadge:'planned',statusLabel:'Planned',desc:'A planned Odin system specialized for software development workflows.',facts:[['Category','Coding'],['Status','Planned']]},
+  {name:'GRM-3.6 Lightning',group:'Foundation',tag:'35B A3B · MoE',statusBadge:'planned',statusLabel:'Planned',desc:'A 35B-total, 3B-active MoE follow-on in the Lightning line.',facts:[['Category','Foundation · Mixture of Experts'],['Parameters','35B total · 3B active (35BA3B)'],['Status','Planned']]},
+  {name:'GRM-3.7-MAX',group:'Foundation',tag:'35B dense',statusBadge:'planned',statusLabel:'Planned',desc:'A 35B dense GRM system planned as the MAX counterpart in the later 3.x line.',facts:[['Category','Foundation · Dense'],['Parameters','35B dense'],['Status','Planned']]},
+  {name:'Odin 4 / GRM 4 / GRM-5',group:'Future',tag:'Next generation',statusBadge:'planned',statusLabel:'Planned',desc:'Future NexLM generations spanning Odin 4, GRM 4, and GRM-5.',facts:[['Category','Future systems'],['Status','Planned'],['Family','Odin 4 · GRM 4 · GRM-5']]}
 ];
 const news=[
   {date:'July 2026',number:'01',title:'NexLM exists in stealth—with revolutionary on-device LMs.',dek:'NexLM is building a new generation of local language models: capable systems designed to run closer to the people who use them.',body:['NexLM is operating in stealth while we build the foundations for a more local AI future. Our work starts from a direct belief: useful intelligence should be able to live on the hardware you already trust.','That means focusing on efficient architectures, practical deployment formats, and the details that turn a model into a tool. We are designing for local runtimes including MLX, GGUF, Ollama, and llama.cpp.','We are early, deliberate, and building in public only when a release is ready to be useful. This is the first note from NexLM.']},
@@ -620,13 +522,11 @@ const news=[
   {date:'July 2026',number:'04',title:'GRM-4 Edge architecture and MoE layering are complete.',dek:'The GRM-4 Edge foundation has reached a key architecture milestone.',body:['The GRM-4 Edge architecture and its mixture-of-experts layering are now complete. This marks the end of a foundational systems phase for the Edge family.','The work supports the 5B A1B and 9B A2B configurations, two profiles intended to explore different balances of capability, efficiency, and edge deployment.','With the architecture established, the next work centers on implementation, training progress, and careful measurement of real-world behavior.']},
   {date:'July 2026',number:'05',title:'How NexLM accelerates on-device inference without diminishing LM safety.',dek:'Efficiency should narrow the distance between a user and their model—not narrow the standard for safe behavior.',body:['On-device inference changes where computation happens. It does not change the need for responsible model behavior. NexLM treats efficiency and safety as complementary engineering requirements.','Our approach focuses on efficient architectures and compatible local runtimes while preserving deliberate evaluation and post-training work. A faster or smaller system still needs clear behavioral boundaries and careful testing.','Local execution can also improve the privacy posture of a workflow by keeping prompts and outputs on the device. Privacy is valuable, but it is not a substitute for model safety; both need to be built in from the start.']}
 ];
-
 function go(id){
   location.hash=id;
   document.querySelector('nav').classList.remove('open');
   document.getElementById('nav-toggle').setAttribute('aria-expanded','false');
 }
-
 function route(){
   let id=location.hash.slice(1)||'home';
   const localTarget=id==='local';
@@ -657,17 +557,14 @@ function route(){
     if(!localTarget)page.focus({preventScroll:true});
   });
 }
-
 document.querySelectorAll('[data-nav]').forEach(btn=>{
   btn.addEventListener('click',()=>go(btn.dataset.nav));
 });
-
 document.getElementById('nav-toggle').addEventListener('click',()=>{
   const nav=document.querySelector('nav');
   const open=nav.classList.toggle('open');
   document.getElementById('nav-toggle').setAttribute('aria-expanded',open?'true':'false');
 });
-
 document.getElementById('back-to-news').addEventListener('click',()=>{
   sessionStorage.removeItem('nexlmArticle');
   go('news');
@@ -676,7 +573,6 @@ document.getElementById('back-to-models').addEventListener('click',()=>{
   sessionStorage.removeItem('nexlmModel');
   go('models');
 });
-
 function renderModels(filter='all'){
   document.getElementById('model-list').innerHTML=models
     .map((m,i)=>({m,i}))
@@ -688,7 +584,6 @@ function renderModels(filter='all'){
   });
 }
 renderModels();
-
 document.querySelectorAll('.filter').forEach(button=>{
   button.addEventListener('click',()=>{
     document.querySelectorAll('.filter').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')});
@@ -697,7 +592,6 @@ document.querySelectorAll('.filter').forEach(button=>{
     renderModels(button.dataset.filter);
   });
 });
-
 function openModel(i){
   const m=models[i];
   sessionStorage.setItem('nexlmModel',i);
@@ -708,7 +602,6 @@ function openModel(i){
   }).join('');
   go('detail');
 }
-
 function renderNews(){
   document.getElementById('news-list').innerHTML=news
     .map((n,i)=>`<button class="news-row" data-news-index="${i}"><span class="mono">Dispatch ${n.number} / ${n.date}</span><h2>${n.title}</h2><span class="go" aria-hidden="true">↗</span><p>${n.dek}</p><span class="read-article mono">Read dispatch →</span></button>`)
@@ -718,7 +611,6 @@ function renderNews(){
   });
 }
 renderNews();
-
 function openArticle(i){
   const n=news[i];
   sessionStorage.setItem('nexlmArticle',i);
@@ -728,7 +620,6 @@ function openArticle(i){
   document.getElementById('article-body').innerHTML=n.body.map(p=>`<p>${p}</p>`).join('');
   go('article');
 }
-
 document.querySelectorAll('.fetch-tab').forEach(button=>{
   button.addEventListener('click',()=>{
     document.querySelectorAll('.fetch-tab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
@@ -737,7 +628,6 @@ document.querySelectorAll('.fetch-tab').forEach(button=>{
     document.getElementById('fetch-cmd-text').textContent=button.dataset.command;
   });
 });
-
 document.getElementById('fetch-copy-btn').addEventListener('click',async()=>{
   const btn=document.getElementById('fetch-copy-btn');
   try{
@@ -751,7 +641,6 @@ document.getElementById('fetch-copy-btn').addEventListener('click',async()=>{
     setTimeout(()=>btn.textContent='Copy',1400);
   }
 });
-
 document.querySelectorAll('#term-list li').forEach(li=>{
   li.addEventListener('click',()=>{
     const action=li.dataset.action;
@@ -765,21 +654,18 @@ document.querySelectorAll('#term-list li').forEach(li=>{
     setTimeout(()=>document.querySelector('.terminal-card').classList.remove('running'),1800);
   });
 });
-
 const cursor=document.getElementById('cursor');
 document.addEventListener('pointermove',e=>{cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px)`});
 document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('pointerenter',()=>cursor.classList.add('hover'));
   el.addEventListener('pointerleave',()=>cursor.classList.remove('hover'));
 });
-
 const revealItems=document.querySelectorAll('.home-depth,.release-strip,.use-cases,.local,.model-row,.news-row,.research-grid article');
 revealItems.forEach(el=>el.classList.add('reveal'));
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
   if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}
 }),{threshold:.12});
 revealItems.forEach(el=>observer.observe(el));
-
 addEventListener('hashchange',route);
 route();
 </script>
