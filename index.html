@@ -230,27 +230,21 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
       </ol>
     </div>
     <div class="terminal-card">
-      <div class="terminal-bar"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-bar-title">nexlm — local / grm-3-nano</span></div>
+      <div class="terminal-bar"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-bar-title">nexlm — harness 1.2.0</span></div>
       <div class="terminal-body">
-        <div><span class="term-prompt">$ </span><span class="term-cmd">nexlm</span></div>
+        <div><span class="term-prompt">$ </span><span class="term-cmd">nexlm harness</span></div>
         <ul class="term-list" id="term-list">
-          <li data-action="run-model"><span class="term-arrow">▶</span><span class="term-label">Run a model</span></li>
-          <li data-action="ollama"><span class="term-arrow">▶</span><span class="term-label">Launch with Ollama</span></li>
-          <li data-action="mlx"><span class="term-arrow">▶</span><span class="term-label">Launch with MLX</span></li>
-          <li data-action="gguf" class="not-installed"><span class="term-arrow">▶</span><span class="term-label">Launch with llama.cpp</span><span class="term-tag-ni">not installed</span></li>
-          <li data-action="more"><span class="term-arrow">▶</span><span class="term-label">More…</span></li>
+          <li data-action="install"><span class="term-arrow">▶</span><span class="term-label">Install Harness</span></li>
+          <li data-action="update"><span class="term-arrow">▶</span><span class="term-label">Update Harness</span></li>
         </ul>
       </div>
       <div class="fetch-tabs-wrap">
-        <div class="fetch-tabs-label">Fetch command</div>
+        <div class="fetch-tabs-label">Install command — NexLM Harness 1.2.0</div>
         <div class="fetch-tabs">
-          <button class="fetch-tab active" data-runtime="Ollama" data-command="ollama pull nexlm/grm-3-nano">Ollama</button>
-          <button class="fetch-tab" data-runtime="MLX" data-command="python -m mlx_lm.generate --model nexlm/grm-3-nano">MLX</button>
-          <button class="fetch-tab" data-runtime="GGUF" data-command="huggingface-cli download nexlm/grm-3-nano-gguf">GGUF</button>
-          <button class="fetch-tab" data-runtime="llama.cpp" data-command="llama-cli -m grm-3-nano.gguf">llama.cpp</button>
-          <button class="fetch-tab" data-runtime="pip" data-command="pip install nexlm && nexlm run grm-3-nano">pip</button>
+          <button class="fetch-tab active" data-runtime="Install" data-command="git clone https://github.com/besmart12349/NexLM-Harness.git && cd NexLM-Harness && pnpm install && pnpm run build && pnpm dsh web">Install</button>
+          <button class="fetch-tab" data-runtime="Update" data-command="cd ~/NexLM-Harness && git pull origin master && pnpm install && pnpm run build && pnpm dsh web">Update</button>
         </div>
-        <div class="fetch-cmd-display"><span class="fetch-cmd-text" id="fetch-cmd-text">ollama pull nexlm/grm-3-nano</span><button class="fetch-copy-btn" id="fetch-copy-btn">Copy</button></div>
+        <div class="fetch-cmd-display"><span class="fetch-cmd-text" id="fetch-cmd-text">git clone https://github.com/besmart12349/NexLM-Harness.git && cd NexLM-Harness && pnpm install && pnpm run build && pnpm dsh web</span><button class="fetch-copy-btn" id="fetch-copy-btn">Copy</button></div>
       </div>
     </div>
   </section>
@@ -281,7 +275,7 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
 <section class="page" id="apps" tabindex="-1">
   <div class="intro"><span class="mono">NexLM / Apps</span><h1>Apps</h1><p class="models-lede">Tools for running and working with NexLM systems on your machine.</p></div>
   <div class="research-grid">
-    <article><span class="mono">01 / CLI</span><h2 class="serif">NexCLI</h2><p>A coding agent command line interface for the NexLM family of language models.</p></article>
+    <article><span class="mono">01 / CLI</span><h2 class="serif">NexCLI</h2><p>A coding agent command line interface for the NexLM family of language models.</p><span class="status-badge indev"><span class="dot"></span>In Development</span></article>
     <article><span class="mono">02 / Harness</span><h2 class="serif">NexLM Harness</h2><p>NexLM Harness 1.2.0. Intelligence, made closer. A local harness for running and working with NexLM models on your hardware.</p><a class="text-cta" href="#harness">View harness <b>→</b></a></article>
   </div>
 </section>
@@ -325,6 +319,34 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <article><span class="mono">02 / Tool use</span><h2 class="serif">Native tool<br><i>calling.</i></h2><p>Supported models get native tool calling instead of prompt-based function emulation. Currently supported for Ollama, with more runtimes planned.</p></article>
     <article><span class="mono">03 / Permissions</span><h2 class="serif">File &amp; workspace<br><i>permissions.</i></h2><p>Choose Read Only, Workspace Write, or Full access per session, so the agent's file and shell access matches exactly what a task needs.</p></article>
     <article><span class="mono">04 / Modes</span><h2 class="serif">Agent<br><i>modes.</i></h2><p>Standard mode for full coding-agent capability, PTC mode for Code Mode SDK tool access, Minimal mode for a lean two-tool agent, and Creator mode for building custom agent presets.</p></article>
+  </div>
+  <div class="intro" style="padding-top:0;border-bottom:0">
+    <span class="mono">NexLM / Apps / Harness / Roadmap</span>
+    <h1 style="font-size:clamp(44px,6vw,96px)">Coming soon</h1>
+    <p class="models-lede">What's next for the NexLM Harness ecosystem.</p>
+  </div>
+  <div style="max-width:1080px;padding:0 4vw 8vw" aria-label="Harness roadmap">
+    <table style="width:100%;border-collapse:collapse;font-size:16px">
+      <thead>
+        <tr>
+          <th style="text-align:left;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;padding:14px 16px 14px 0;border-bottom:1px solid var(--ink);color:var(--muted)">Feature</th>
+          <th style="text-align:left;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;padding:14px 16px 14px 0;border-bottom:1px solid var(--ink);color:var(--muted)">Status</th>
+          <th style="text-align:left;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;padding:14px 16px 14px 0;border-bottom:1px solid var(--ink);color:var(--muted)">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:28px 16px 28px 0;border-bottom:1px solid var(--line);font-family:Georgia,serif;font-size:24px;vertical-align:top;white-space:nowrap">NexLM Intent</td>
+          <td style="padding:28px 16px 28px 0;border-bottom:1px solid var(--line);vertical-align:top"><span class="status-badge indev"><span class="dot"></span>In development</span></td>
+          <td style="padding:28px 16px 28px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6;font-size:15px">A powerful orchestration engine that powers multitasking and sub-agents across locally running language models on consumer hardware.</td>
+        </tr>
+        <tr>
+          <td style="padding:28px 16px 28px 0;border-bottom:1px solid var(--line);font-family:Georgia,serif;font-size:24px;vertical-align:top;white-space:nowrap">Nexus Link</td>
+          <td style="padding:28px 16px 28px 0;border-bottom:1px solid var(--line);vertical-align:top"><span class="status-badge planned"><span class="dot"></span>Planned</span></td>
+          <td style="padding:28px 16px 28px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6;font-size:15px">A remote control for NexLM Harness.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="detail">
     <button class="back" id="back-to-apps">← All apps</button>
@@ -481,7 +503,7 @@ document.getElementById('fetch-copy-btn').addEventListener('click',async()=>{
 });
 document.querySelectorAll('#term-list li').forEach(li=>{
   li.addEventListener('click',()=>{
-    const tabMap={'run-model':'Ollama','ollama':'Ollama','mlx':'MLX','gguf':'GGUF','more':'llama.cpp'};
+    const tabMap={'install':'Install','update':'Update'};
     const target=tabMap[li.dataset.action];
     if(target){const tab=document.querySelector('.fetch-tab[data-runtime="'+target+'"]');if(tab)tab.click();}
     document.querySelector('.terminal-card').classList.add('running');
