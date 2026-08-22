@@ -386,6 +386,42 @@ footer{border-top:1px solid var(--line);padding:25px 4vw;display:flex;justify-co
     <article><span class="mono">03 / Evaluation</span><h2 class="serif">Real-world signals</h2><p>Beyond headline benchmarks, we examine coding workflows, structured reasoning, and local latency.</p></article>
     <article><span class="mono">04 / Deployment</span><h2 class="serif">Inference that travels</h2><p>Our deployment work considers MLX, GGUF, Ollama, and llama.cpp.</p></article>
   </div>
+  <div class="intro" style="padding-top:0;border-bottom:0">
+    <span class="mono">NexLM / Research / Mission</span>
+    <h2 class="serif" style="font-size:clamp(30px,4vw,50px);margin:18px 0 20px">Why we build this way.</h2>
+    <p class="models-lede">NexLM exists to keep the balance of power in AI on the side of the person holding the device. We build models, runtimes, and tools that make real capability possible without a permanent link to someone else's server — because privacy, response time, and ownership of your own workflow shouldn't be premium features reserved for whoever can afford the biggest cluster.</p>
+  </div>
+  <div style="max-width:1080px;padding:0 4vw 6vw">
+    <span class="mono" style="display:block;margin-bottom:14px">Training pipeline</span>
+    <table style="width:100%;border-collapse:collapse;font-size:15px">
+      <thead>
+        <tr>
+          <th style="text-align:left;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;padding:12px 16px 12px 0;border-bottom:1px solid var(--ink);color:var(--muted)">Stage</th>
+          <th style="text-align:left;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;padding:12px 16px 12px 0;border-bottom:1px solid var(--ink);color:var(--muted)">Focus</th>
+          <th style="text-align:left;font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;padding:12px 16px 12px 0;border-bottom:1px solid var(--ink);color:var(--muted)">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top;white-space:nowrap">Data curation</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap;color:var(--muted);font-size:13px">Quality &amp; safety</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55">Curated corpora spanning code, reasoning traces, multilingual text, and vision-language pairs, filtered for quality, duplication, and safety before any training begins.</td></tr>
+        <tr><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top;white-space:nowrap">Pretraining</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap;color:var(--muted);font-size:13px">Base capability</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55">Dense and mixture-of-experts architectures trained from scratch, optimized for capability per parameter rather than raw parameter count.</td></tr>
+        <tr><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top;white-space:nowrap">Post-training</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap;color:var(--muted);font-size:13px">Behavior &amp; alignment</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55">Instruction tuning, thinking-mode RLHF, and tool-calling alignment, tuned specifically for the latency and memory budgets of consumer hardware.</td></tr>
+        <tr><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top;white-space:nowrap">Quantization &amp; compression</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap;color:var(--muted);font-size:13px">Edge readiness</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55">4-bit and mixed-precision quantization, stress-tested to preserve reasoning quality rather than just perplexity scores.</td></tr>
+        <tr><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top;white-space:nowrap">Evaluation</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap;color:var(--muted);font-size:13px">Real-world signal</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55">Benchmarked across reasoning, coding, instruction-following, and multimodal suites before a model's status changes on the public index.</td></tr>
+        <tr><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top;white-space:nowrap">Release</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap;color:var(--muted);font-size:13px">Runtime support</td><td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55">Models ship through Ollama, MLX, GGUF, llama.cpp, and Hugging Face Transformers, with matching support added to NexLM Harness.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="list-head mono"><span>Latest research</span><span>01—04</span></div>
+  <div id="research-article-list"></div>
+</section>
+<section class="page" id="research-article" tabindex="-1">
+  <article class="article">
+    <button class="back" id="back-to-research">← All research</button>
+    <div class="article-meta mono" id="research-article-meta"></div>
+    <h1 id="research-article-title"></h1>
+    <p class="article-dek" id="research-article-dek"></p>
+    <div class="article-body" id="research-article-body"></div>
+  </article>
 </section>
 <section class="page" id="contact" tabindex="-1">
   <div class="contact"><span class="mono">NexLM / Contact</span><h1>Make intelligence <i>yours.</i></h1><a class="email" href="mailto:nexlm@icloud.com">nexlm@icloud.com ↗</a></div>
@@ -411,14 +447,20 @@ const models=[
   {name:'Odin 4 / GRM 4 / GRM-5',group:'Future',tag:'Next generation',statusBadge:'planned',statusLabel:'Planned',desc:'Future NexLM generations spanning Odin 4, GRM 4, and GRM-5.',facts:[['Family','Odin 4 · GRM 4 · GRM-5'],['Status','Planned']]}
 ];
 const news=[
-  {date:'July 2026',number:'01',title:'NexLM exists in stealth—with revolutionary on-device LMs.',dek:'NexLM is building a new generation of local language models.',body:['NexLM is operating in stealth while we build the foundations for a more local AI future.']},
-  {date:'July 2026',number:'02',title:'GRM-1 Preview passes internal testing.',dek:'Our early general-reasoning model has completed its internal testing milestone.',body:['GRM-1 Preview has passed its initial internal testing phase.']},
-  {date:'July 2026',number:'03',title:'GRM-3 Nano completes pretraining.',dek:'GRM-3 Nano is moving toward release as NexLM\'s first publicly available model.',body:['Pretraining is complete for GRM-3 Nano.']},
-  {date:'July 2026',number:'04',title:'GRM-4 Edge architecture and MoE layering are complete.',dek:'The GRM-4 Edge foundation has reached a key architecture milestone.',body:['The GRM-4 Edge architecture and mixture-of-experts layering are complete.']},
-  {date:'July 2026',number:'05',title:'How NexLM accelerates on-device inference without diminishing LM safety.',dek:'Efficiency should narrow the distance between a user and their model—not the standard for safe behavior.',body:['On-device inference changes where computation happens. It does not change the need for responsible model behavior.']},
-  {date:'August 2026',number:'06',title:'GRM-3 Nano is release imminent.',dek:'NexLM\'s first public model is moving from evaluation into release.',body:['GRM-3 Nano is now marked release imminent on the NexLM model index.']},
-  {date:'August 2026',number:'07',title:'The NexLM model roadmap is updated.',dek:'GRM-3.x, Odin cyber systems, and the next generation are now listed on the public index.',body:['The Models page now reflects the current NexLM roadmap.','Statuses now include Release imminent and Planned.']},
-  {date:'August 2026',number:'08',title:'NexLM Harness reaches 1.2.0.',dek:'Rich errors and thinking, native tool calling, and file/workspace permissions.',body:['NexLM Harness is now at 1.2.0 (Preview) with visible think steps and tool-call errors inline in the chat.','Native tool calling is now supported for Ollama, with more runtimes planned.','Sessions can be scoped to Read Only, Workspace Write, or Full access, and run in Standard, PTC, Minimal, or Creator mode.']}
+  {date:'July 2026',number:'01',title:'NexLM exists in stealth—with revolutionary on-device LMs.',dek:'NexLM is building a new generation of local language models.',body:['NexLM is operating in stealth while we build the foundations for a more local AI future. The company\'s founding thesis is simple: capable AI shouldn\'t require a permanent connection to someone else\'s server.','Early work has focused on architecture research for small, efficient reasoning models that can run entirely on consumer hardware — phones, laptops, and single-GPU workstations — without sacrificing the reasoning quality typically reserved for much larger, cloud-hosted systems.','The first public artifacts of that work, including the GRM model family and the NexLM Harness runtime, are still months from release, but internal benchmarks are already informing the roadmap published on this site.']},
+  {date:'July 2026',number:'02',title:'GRM-1 Preview passes internal testing.',dek:'Our early general-reasoning model has completed its internal testing milestone.',body:['GRM-1 Preview, an internal precursor to the GRM-3 line, has passed its initial internal testing phase.','GRM-1 Preview was never intended for public release. It served as a testbed for the hybrid Gated DeltaNet and attention architecture that would later become the backbone of GRM-3 Nano, and for early experiments with configurable thinking modes.','Lessons from GRM-1 Preview — particularly around instruction-following stability at small parameter counts — directly shaped the training recipe used for GRM-3 Nano.']},
+  {date:'July 2026',number:'03',title:'GRM-3 Nano completes pretraining.',dek:'GRM-3 Nano is moving toward release as NexLM\'s first publicly available model.',body:['Pretraining is complete for GRM-3 Nano, NexLM\'s first model intended for public release.','GRM-3 Nano is a sub-1B parameter, natively multimodal model built on a hybrid Gated DeltaNet plus attention architecture, spanning 24 dense layers with a native 262,144-token context window and support for 201 languages.','Despite its size, GRM-3 Nano supports a full thinking mode with measurably stronger scores across STEM, instruction-following, and visual reasoning tasks — a combination NexLM believes is rare at this parameter count.','The model now moves into evaluation ahead of a planned release across Ollama, MLX, GGUF, llama.cpp, and Hugging Face Transformers.']},
+  {date:'July 2026',number:'04',title:'GRM-4 Edge architecture and MoE layering are complete.',dek:'The GRM-4 Edge foundation has reached a key architecture milestone.',body:['The GRM-4 Edge foundation has reached a key architecture milestone: its mixture-of-experts layering is complete.','This work directly informed the design of GRM-3.5 Lightning (30B total, 3B active) and GRM-3.6 Lightning (35B total, 3B active) — both of which route through a sparse set of experts to reach far higher total capacity while keeping active compute, and therefore local latency, low.','GRM-4 Edge itself remains further out on the roadmap, but the MoE layering validated here is expected to carry forward into later Lightning-class releases and into NexLM\'s early multi-agent orchestration research.']},
+  {date:'July 2026',number:'05',title:'How NexLM accelerates on-device inference without diminishing LM safety.',dek:'Efficiency should narrow the distance between a user and their model—not the standard for safe behavior.',body:['On-device inference changes where computation happens. It does not change the need for responsible model behavior.','NexLM\'s position is that efficiency and safety are not in tension — a model that runs faster and more privately on a user\'s own hardware still needs the same guardrails, the same evaluation rigor, and the same honesty about its limitations as one running in a data center.','This philosophy underpins every release decision on this site: nothing ships as "released" until it clears the same evaluation bar, regardless of how small or fast it is.']},
+  {date:'August 2026',number:'06',title:'GRM-3 Nano is release imminent.',dek:'NexLM\'s first public model is moving from evaluation into release.',body:['GRM-3 Nano is now marked release imminent on the NexLM model index, the final status before general availability.','At release, GRM-3 Nano will support five runtimes out of the box — Ollama, MLX, GGUF, llama.cpp, and Hugging Face Transformers — with a footprint of roughly 1.6GB in BF16 and about 0.5GB at 4-bit, small enough to run on phones, a Raspberry Pi, or a CPU-only machine.','It ships under the Apache 2.0 license, and will be the first model NexLM Harness supports natively alongside its existing Ollama integration.']},
+  {date:'August 2026',number:'07',title:'The NexLM model roadmap is updated.',dek:'GRM-3.x, Odin cyber systems, and the next generation are now listed on the public index.',body:['The Models page now reflects the current NexLM roadmap: ten systems spanning four families — Foundation, Reasoning, Coding, and Preview — plus a Future bucket for next-generation work.','New additions include GRM-3.5 Lightning and GRM-3.6 Lightning (30B and 35B total parameters, 3B active, mixture-of-experts), their dense counterparts GRM-3.5-MAX and GRM-3.7-MAX, and Odin-3.1 Code, a coding-specialized successor to the Odin cyber line.','Statuses now include Release imminent and Planned in addition to the existing Released, Finishing eval, In development, and Security/approval gated tiers, giving a clearer picture of how close each system is to shipping.']},
+  {date:'August 2026',number:'08',title:'NexLM Harness reaches 1.2.0.',dek:'Rich errors and thinking, native tool calling, and file/workspace permissions.',body:['NexLM Harness is now at 1.2.0 (Preview), with visible think steps and tool-call errors shown inline in the chat — including invalid-argument errors — so it\'s clear why a step failed and how the agent recovered.','Thinking depth is now configurable across eight levels — OFF, Low, Medium, High, Extra, XHigh, Max, and Ultra — for supported models.','Native tool calling is now supported for Ollama, with more runtimes planned, and sessions can be scoped to Read Only, Workspace Write, or Full access, running in Standard, PTC, Minimal, or Creator mode depending on the task.','Harness 1.2.0 installs from source via pnpm and is available now on GitHub.']}
+];
+const researchArticles=[
+  {date:'August 2026',number:'01',title:'MoE agent layers: real multi-agent multitasking on consumer hardware',dek:'An early look at routing tasks across expert sub-agents instead of expert weights — and the unannounced model built to test it.',body:['Mixture-of-experts routing has mostly been used one way: at the layer level, to activate a small slice of a model\'s weights per token. NexLM\'s research group has been testing a different idea — routing at the agent level, where whole sub-agents, each specialized for a class of task, are activated instead of expert feed-forward blocks.','The goal is real multitasking on consumer hardware: a coding sub-agent, a research sub-agent, and a tool-use sub-agent running concurrently under one orchestrator, sharing a single model\'s weights but not its context, without needing server-class GPUs to keep them all resident.','This work is being tested internally on an unannounced model, currently referred to by the internal codename MAO-1-Preview (Multi Agent Orchestration). It has not been added to the public model index and its architecture is not final, but it builds on the mixture-of-experts layering validated in GRM-3.5 Lightning and GRM-3.6 Lightning.','There is no committed release date for MAO-1-Preview. It exists right now purely as a research vehicle for agent-level routing, and any future public model built on these findings would ship under its own name and its own evaluation pass.']},
+  {date:'August 2026',number:'02',title:'NexLM Intent: a local orchestration engine for multi-agent models',dek:'The engine behind NexLM Harness\'s coming multitasking support, running entirely on your own hardware.',body:['NexLM Intent is the orchestration layer listed as "in development" on the NexLM Harness product page. It is designed to sit inside Harness and coordinate multiple locally running language models and sub-agents at once, without sending anything off the machine it runs on.','Where a single Harness session today runs one model in one mode, NexLM Intent is built to manage several: a planning pass handled by one model, tool execution handled by another, and background research handled by a third — all scheduled, tracked, and recombined locally.','It is closely related to the agent-level mixture-of-experts routing being tested with MAO-1-Preview, but NexLM Intent is the orchestration engine, not a model itself — it is designed to work with whatever NexLM models a user already has installed through Harness.','NexLM Intent has no release date yet. It is tracked on the Harness roadmap alongside Nexus Link, a companion remote control for Harness, as one of two features NexLM is actively building toward.']},
+  {date:'August 2026',number:'03',title:'"Stress" training: recovering quality after aggressive quantization',dek:'Why heavily quantized models start looping or producing gibberish — and how skill-conditioning and explicit intent can bring quality back without full precision.',body:['Aggressive quantization — dropping a model to 4-bit or lower to fit consumer hardware — reliably trades some quality for size. Past a certain point, that trade stops being graceful: models can fall into repetitive thinking loops, lose track of an instruction mid-response, or produce outright gibberish under sustained load.','NexLM\'s internal name for the process of deliberately pushing a quantized model into these failure states, then training against them, is "stress" training. Rather than only optimizing for perplexity on clean data, stress training exposes a model to degraded, quantization-like conditions during post-training so it learns to recognize and recover from them.','The most consistent recovery lever so far has been explicit intent — giving the model a clear, narrow statement of what it is supposed to be doing at each step — combined with narrow, task-specific skills rather than broad, general-purpose prompting. In early testing, this combination has recovered a meaningful share of the quality otherwise lost to 4-bit quantization, without moving back to a larger precision format.','This is active research, not a shipped feature. It currently informs how NexLM tunes the sub-1B and MoE model lines for their 4-bit release variants, and it is one of the inputs being considered for future versions of NexLM Harness\'s agent modes.']},
+  {date:'August 2026',number:'04',title:'Why NexLM believes on-device AI wins in the long run',dek:'Privacy, latency, cost, and ownership all point the same direction — even if the cloud gets there first on raw scale.',body:['Cloud-hosted models will likely keep leading on raw scale for the foreseeable future — bigger clusters can train bigger models. NexLM\'s bet is that raw scale is not the same as the best outcome for most real usage, and that the gap will close faster than most people expect as efficient architectures, quantization, and specialized hardware improve.','On-device inference removes a round trip. That matters for anything interactive — a coding agent, a voice assistant, a tool-calling loop — where added latency compounds with every step. It also removes a dependency: a model on your machine still works without a connection, without a subscription, and without a service that can change its terms or shut down.','Privacy is the most obvious argument, but ownership may be the more durable one. A model a user can run, inspect, and fine-tune locally is a tool they control indefinitely, not a service they rent. NexLM\'s Apache 2.0 releases and open runtime support (Ollama, MLX, GGUF, llama.cpp) are a direct bet on that distinction mattering more over time, not less.','None of this means the cloud disappears — some workloads will always need it. It means NexLM is building for the growing share of AI usage that doesn\'t need a data center at all, and betting that share keeps growing.']}
 ];
 function go(id){location.hash=id;document.querySelector('nav').classList.remove('open');document.getElementById('nav-toggle').setAttribute('aria-expanded','false')}
 function route(){
@@ -428,6 +470,7 @@ function route(){
   if(!document.getElementById(id))id='home';
   if(id==='detail'&&sessionStorage.getItem('nexlmModel')===null)id='models';
   if(id==='article'&&sessionStorage.getItem('nexlmArticle')===null)id='news';
+  if(id==='research-article'&&sessionStorage.getItem('nexlmResearchArticle')===null)id='research';
   if(id==='article'){
     const stored=Number(sessionStorage.getItem('nexlmArticle'));
     if(Number.isInteger(stored)&&news[stored]){
@@ -438,11 +481,21 @@ function route(){
       document.getElementById('article-body').innerHTML=n.body.map(p=>`<p>${p}</p>`).join('');
     }
   }
+  if(id==='research-article'){
+    const stored=Number(sessionStorage.getItem('nexlmResearchArticle'));
+    if(Number.isInteger(stored)&&researchArticles[stored]){
+      const n=researchArticles[stored];
+      document.getElementById('research-article-meta').textContent=n.number+' / '+n.date+' / NexLM Research';
+      document.getElementById('research-article-title').textContent=n.title;
+      document.getElementById('research-article-dek').textContent=n.dek;
+      document.getElementById('research-article-body').innerHTML=n.body.map(p=>`<p>${p}</p>`).join('');
+    }
+  }
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const page=document.getElementById(id);
   page.classList.add('active');
-  document.querySelectorAll('[data-nav]').forEach(b=>b.setAttribute('aria-current',(b.dataset.nav===id||(id==='harness'&&b.dataset.nav==='apps'))?'page':'false'));
-  const titles={home:'NexLM — Local AI Models',models:'NexLM — Models',apps:'NexLM — Apps',harness:'NexLM — Harness',news:'NexLM — News',research:'NexLM — Research',contact:'NexLM — Contact',detail:'NexLM — Model',article:'NexLM — Dispatch'};
+  document.querySelectorAll('[data-nav]').forEach(b=>b.setAttribute('aria-current',(b.dataset.nav===id||(id==='harness'&&b.dataset.nav==='apps')||(id==='research-article'&&b.dataset.nav==='research'))?'page':'false'));
+  const titles={home:'NexLM — Local AI Models',models:'NexLM — Models',apps:'NexLM — Apps',harness:'NexLM — Harness',news:'NexLM — News',research:'NexLM — Research',contact:'NexLM — Contact',detail:'NexLM — Model',article:'NexLM — Dispatch','research-article':'NexLM — Research'};
   document.title=titles[id]||'NexLM';
   requestAnimationFrame(()=>{
     const target=localTarget?document.getElementById('local'):page;
@@ -455,6 +508,7 @@ document.getElementById('nav-toggle').addEventListener('click',()=>{const nav=do
 document.getElementById('back-to-news').addEventListener('click',()=>{sessionStorage.removeItem('nexlmArticle');go('news')});
 document.getElementById('back-to-models').addEventListener('click',()=>{sessionStorage.removeItem('nexlmModel');go('models')});
 document.getElementById('back-to-apps').addEventListener('click',()=>go('apps'));
+document.getElementById('back-to-research').addEventListener('click',()=>{sessionStorage.removeItem('nexlmResearchArticle');go('research')});
 function renderModels(filter='all'){
   document.getElementById('model-list').innerHTML=models.map((m,i)=>({m,i})).filter(x=>filter==='all'||x.m.group===filter).map(({m,i})=>`<button class="model-row" data-model-index="${i}"><span class="model-name">${m.name}</span><span class="tag">${m.tag}</span><span class="description">${m.desc}</span><span class="status-badge ${m.statusBadge}"><span class="dot"></span>${m.statusLabel}</span><span class="go" aria-hidden="true">↗</span></button>`).join('');
   document.querySelectorAll('.model-row').forEach(row=>row.addEventListener('click',()=>openModel(Number(row.dataset.modelIndex))));
@@ -484,6 +538,20 @@ function openArticle(i){
   document.getElementById('article-dek').textContent=n.dek;
   document.getElementById('article-body').innerHTML=n.body.map(p=>`<p>${p}</p>`).join('');
   go('article');
+}
+function renderResearchArticles(){
+  document.getElementById('research-article-list').innerHTML=researchArticles.map((n,i)=>`<button class="news-row" data-research-index="${i}"><span class="mono">Research ${n.number} / ${n.date}</span><h2>${n.title}</h2><span class="go" aria-hidden="true">↗</span><p>${n.dek}</p></button>`).join('');
+  document.querySelectorAll('[data-research-index]').forEach(row=>row.addEventListener('click',()=>openResearchArticle(Number(row.dataset.researchIndex))));
+}
+renderResearchArticles();
+function openResearchArticle(i){
+  const n=researchArticles[i];
+  sessionStorage.setItem('nexlmResearchArticle',i);
+  document.getElementById('research-article-meta').textContent=n.number+' / '+n.date+' / NexLM Research';
+  document.getElementById('research-article-title').textContent=n.title;
+  document.getElementById('research-article-dek').textContent=n.dek;
+  document.getElementById('research-article-body').innerHTML=n.body.map(p=>`<p>${p}</p>`).join('');
+  go('research-article');
 }
 document.querySelectorAll('.fetch-tab').forEach(button=>{
   button.addEventListener('click',()=>{
